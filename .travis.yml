@@ -14,6 +14,10 @@ deploy:
   local_dir: out # Directory to push to the gh-pages branch
   on:
     branch: master # Only deploy when the build is on master branch
+before_install:
+  - wget https://raw.githubusercontent.com/rzfury/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh begin $WEBHOOK_URL
 after_success:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
