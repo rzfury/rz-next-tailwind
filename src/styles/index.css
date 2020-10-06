@@ -1,77 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Utilities */
-
-/* - Translate Center */
-.translate-center {
-  transform: translate(-50%, -50%);
-}
-.translate-x-center {
-  transform: translateX(-50%);
-}
-.translate-y-center {
-  transform: translateY(-50%);
-}
+@import "tailwindcss/base";
 
 /* Components */
+@import "tailwindcss/components";
 
-/* - Buttons */
-.btn-blue {
-  @apply bg-blue-500 text-white py-2 px-5 rounded;
-}
+@import "./components/buttons.css";
+@import "./components/form.css";
 
-.btn-blue:hover {
-  @apply bg-blue-600;
-}
+/* Utilities */
+@import "tailwindcss/utilities";
 
-/* - Form */
-
-.form-container > * {
-  @apply mb-4;
-}
-
-.form-group {
-  @apply flex gap-x-4;
-}
-
-.form-group > * {
-  @apply flex-grow;
-}
-
-/* -- Form Controls */
-.form-text,
-.form-textarea {
-  @apply relative block;
-}
-
-.form-text-label {
-  @apply absolute translate-y-center ml-4 text-gray-600 transition-position duration-100;
-  pointer-events: none;
-}
-
-.form-text-label.input-has-value {
-  top: 0 !important;
-}
-
-.form-text-input,
-.form-select {
-  @apply block w-full border-2 border-solid border-gray-400 py-2 px-3 rounded;
-  transition: border-color ease-out .2s;
-}
-
-.form-text-input:focus,
-.form-select:focus {
-  @apply border-gray-600;
-  outline: none !important;
-}
-
-
-.form-select {
-  @apply text-gray-600;
-}
-
-.form-textarea > .form-text-label {
-  top: 1.4rem;
-}
+@import "./utilities/translate-center.css";

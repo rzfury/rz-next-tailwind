@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Form(props: React.FormHTMLAttributes<HTMLFormElement>) {
+export default function Form(props: RazorWindProps.Form.Form) {
   return (
     <form
       {...props}
