@@ -55,14 +55,21 @@
   top: 0 !important;
 }
 
-.form-text-input {
-  @apply block w-full border-2 border-solid border-gray-400 py-2 px-3;
+.form-text-input,
+.form-select {
+  @apply block w-full border-2 border-solid border-gray-400 py-2 px-3 rounded;
   transition: border-color ease-out .2s;
 }
 
-.form-text-input:focus {
+.form-text-input:focus,
+.form-select:focus {
   @apply border-gray-600;
   outline: none !important;
+}
+
+
+.form-select {
+  @apply text-gray-600;
 }
 
 .form-textarea > .form-text-label {

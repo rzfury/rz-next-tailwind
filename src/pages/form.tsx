@@ -3,12 +3,13 @@ import Form from '../components/form/form';
 import FormGroup from '../components/form/group';
 import Field from '../components/form/field';
 import FieldArea from '../components/form/field-area';
+import Select from '../components/form/select';
 
 export default class ExampleForm extends React.Component {
   render() {
     return (
       <div className="p-5">
-        <span className="text-gray-700 text-2xl">Example Form</span>
+        <span className="text-gray-700 text-2xl">TailwindCSS - Example Form</span>
         <hr className="my-5"/>
         <Form autoComplete="false">
           <FormGroup>
@@ -16,6 +17,13 @@ export default class ExampleForm extends React.Component {
             <Field label="Last Name" name="lastName"/>
           </FormGroup>
           <FieldArea label="Note" name="note"/>
+          <Select
+            options={[
+              { label: 'Option 1', value: 'val-1' },
+              { label: 'Option 2', value: 'val-2' },
+              { label: 'Option 3', value: 'val-3' },
+            ]}
+          />
           <button className="btn-blue">Send</button>
         </Form>
       </div>
