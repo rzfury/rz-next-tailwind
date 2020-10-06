@@ -1,0 +1,96 @@
+/* - Form */
+
+.form-container > * {
+  @apply mb-4;
+}
+
+.form-group {
+  @apply flex gap-x-4;
+}
+
+.form-group > * {
+  @apply flex-grow;
+}
+
+/* - Common */
+
+.form-input {
+  @apply block w-full border-2 border-solid border-gray-400 py-2 px-3 rounded;
+  transition: border-color ease-out .2s;
+}
+
+.form-input\:focus {
+  @apply border-gray-600;
+  outline: none !important;
+}
+
+/* - Field / FieldArea */
+
+.form-text,
+.form-textarea {
+  @apply relative block h-fit;
+}
+
+.form-text-label {
+  @apply absolute translate-y-center ml-4 text-gray-600 transition-position duration-100;
+  pointer-events: none;
+}
+
+.form-text-label.input-has-value {
+  top: 0 !important;
+}
+
+.form-text-input {
+  @apply form-input;
+}
+
+.form-text-input:focus {
+  @apply form-input:focus;
+}
+
+.form-textarea > .form-text-label {
+  top: 1.4rem;
+}
+
+/* - Select */
+
+.form-select {
+  @apply form-input;
+  @apply text-gray-600;
+}
+
+/* - Checkbox */
+
+.form-checkbox {
+  @apply relative flex cursor-pointer;
+}
+
+.form-checkbox-input {
+  @apply absolute h-0 w-0 cursor-pointer hidden;
+}
+
+.form-checkbox-backdrop {
+  @apply absolute top-0 left-0 border-2 border-solid border-gray-400 rounded;
+  height: 18px;
+  width: 18px;
+  transition-property: border-color, background-color;
+  transition-timing-function: ease-out;
+  transition-duration: .2s;
+}
+
+.form-checkbox-icon {
+  @apply absolute top-0 left-0 opacity-0;
+  padding: 0.2rem;
+}
+
+.form-checkbox-label {
+  @apply ml-6;
+}
+
+.form-checkbox-input:checked + .form-checkbox-backdrop {
+  @apply border-blue-400 bg-blue-400;
+}
+
+.form-checkbox-input:checked ~ .form-checkbox-icon {
+  @apply opacity-100;
+}

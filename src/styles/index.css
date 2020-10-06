@@ -1,18 +1,12 @@
-@tailwind base;
+@import "tailwindcss/base";
 
-/* Write your own custom base styles here */
+/* Components */
+@import "tailwindcss/components";
 
-/* Start purging... */
-@tailwind components;
-/* Stop purging. */
+@import "./components/buttons.css";
+@import "./components/form.css";
 
-/* Write your own custom component styles here */
-.btn-blue {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
-}
+/* Utilities */
+@import "tailwindcss/utilities";
 
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
-
-/* Your own custom utilities */
+@import "./utilities/translate-center.css";
