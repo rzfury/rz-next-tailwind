@@ -9,6 +9,12 @@ module.exports = {
       colors: {
         'accent-1': '#333',
       },
+      inset: {
+        '50': '50%',
+      },
+      transitionProperty: {
+        'position': 'top, left, bottom, right',
+      }
     },
   },
   variants: {},
