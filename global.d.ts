@@ -16,11 +16,21 @@ declare namespace RazorWindProps {
 
     interface Checkbox extends React.InputHTMLAttributes<HTMLInputElement> {
       label?: string;
+      className?: string;
+      containerProps?: React.HTMLAttributes<HTMLLabelElement>;
+      backdropClassName?: string;
+      iconClassName?: string;
+      labelClassName?: string;
     }
 
     interface Radio extends React.InputHTMLAttributes<HTMLInputElement> {
-      label?: string;
       name: string;
+      label?: string;
+      className?: string;
+      containerProps?: React.HTMLAttributes<HTMLLabelElement>;
+      backdropClassName?: string;
+      iconClassName?: string;
+      labelClassName?: string;
     }
 
     interface Field {

@@ -1,14 +1,15 @@
 import React from 'react';
+import conclass from '../../utility/conclass';
 
 export default function Radio(props: RazorWindProps.Form.Radio) {
   return (
-    <label className="form-radio">
+    <label {...props.containerProps} className={conclass('form-radio', props.containerProps?.className)}>
       <span className="form-radio-control">
-        <input type="radio" className="form-radio-input" name={props.name}/>
-        <span className="form-radio-backdrop"></span>
-        <span className="form-radio-icon"></span>
+        <input {...props} type="radio" name={props.name} className="form-radio-input"/>
+        <span className={conclass('form-radio-backdrop', props.backdropClassName)}></span>
+        <span className={conclass('form-radio-icon', props.iconClassName)}></span>
       </span>
-      <span className="form-radio-label">{props.label}</span>
+      <span className={conclass('form-radio-label', props.labelClassName)}>{props.label}</span>
     </label>
   );
 }
