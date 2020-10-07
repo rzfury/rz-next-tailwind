@@ -25,6 +25,8 @@ export default function Field(props: RazorWindProps.Form.Field) {
         className={conclass('form-text-input', props.inputProps?.className)}
         name={props.name}
         onChange={handleChange}
+        disabled={props.disabled}
+        readOnly={props.readonly}
       />
     </div>
   );

@@ -23,6 +23,21 @@ declare namespace RazorWindProps {
 
     interface Checkbox extends React.InputHTMLAttributes<HTMLInputElement> {
       label?: string;
+      className?: string;
+      containerProps?: React.HTMLAttributes<HTMLLabelElement>;
+      backdropClassName?: string;
+      iconClassName?: string;
+      labelClassName?: string;
+    }
+
+    interface Radio extends React.InputHTMLAttributes<HTMLInputElement> {
+      name: string;
+      label?: string;
+      className?: string;
+      containerProps?: React.HTMLAttributes<HTMLLabelElement>;
+      backdropClassName?: string;
+      iconClassName?: string;
+      labelClassName?: string;
     }
 
     interface Field {
@@ -43,6 +58,12 @@ declare namespace RazorWindProps {
 
       /** @type Input Name */
       name?: string;
+
+      /** @type Disable Input */
+      disabled?: boolean;
+
+      /** @type */
+      readonly?: boolean;
 
       /** @type Input OnChange Event */
       onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -69,6 +90,12 @@ declare namespace RazorWindProps {
 
       /** @type Input Value */
       value?: string;
+
+      /** @type Disable Input */
+      disabled?: boolean;
+
+      /** @type */
+      readonly?: boolean;
 
       /** @type Input OnChange Event */
       onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;

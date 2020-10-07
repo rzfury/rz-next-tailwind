@@ -14,14 +14,32 @@
 
 /* - Common */
 
+/* For controls like text input, text area, and select */
 .form-input {
-  @apply block w-full border-2 border-solid border-gray-400 py-2 px-3 rounded;
+  @apply block w-full border border-solid border-gray-400 py-2 px-3 rounded;
   transition: border-color ease-out .2s;
+}
+
+.form-input\:read-only {
+  @apply bg-gray-100;
 }
 
 .form-input\:focus {
   @apply border-gray-600;
   outline: none !important;
+}
+
+/* For controls like checkbox and radio */
+.form-choicebox {
+  @apply relative flex cursor-pointer;
+}
+
+.form-choicebox input {
+  @apply absolute h-0 w-0 cursor-pointer hidden;
+}
+
+.form-choicebox input:disabled + [class*=-backdrop] {
+  @apply bg-gray-100;
 }
 
 /* - Field / FieldArea */
@@ -48,6 +66,10 @@
   @apply form-input:focus;
 }
 
+.form-text-input:read-only {
+  @apply form-input:read-only;
+}
+
 .form-textarea > .form-text-label {
   top: 1.4rem;
 }
@@ -59,18 +81,15 @@
   @apply text-gray-600;
 }
 
+.form-select:hover,
+.form-select:focus {
+  @apply form-input:focus;
+}
+
 /* - Checkbox */
 
-.form-checkbox {
-  @apply relative flex cursor-pointer;
-}
-
-.form-checkbox-input {
-  @apply absolute h-0 w-0 cursor-pointer hidden;
-}
-
 .form-checkbox-backdrop {
-  @apply absolute top-0 left-0 border-2 border-solid border-gray-400 rounded;
+  @apply absolute top-0 left-0 border border-solid border-gray-400 rounded;
   height: 18px;
   width: 18px;
   transition-property: border-color, background-color;
@@ -80,7 +99,12 @@
 
 .form-checkbox-icon {
   @apply absolute top-0 left-0 opacity-0;
-  padding: 0.2rem;
+  height: 18px;
+  width: 18px;
+}
+
+.form-checkbox-icon > svg {
+  @apply absolute top-50 left-50 translate-center;
 }
 
 .form-checkbox-label {
@@ -94,3 +118,40 @@
 .form-checkbox-input:checked ~ .form-checkbox-icon {
   @apply opacity-100;
 }
+
+/* - Radio */
+
+.form-radio-backdrop {
+  @apply absolute top-0 left-0 border border-solid border-gray-400 rounded-full;
+  height: 18px;
+  width: 18px;
+  transition-property: border-color, background-color;
+  transition-timing-function: ease-out;
+  transition-duration: .2s;
+}
+
+.form-radio-icon {
+  @apply absolute top-0 left-0 opacity-0;
+  height: 18px;
+  width: 18px;
+}
+
+.form-radio-icon::before {
+  @apply absolute top-50 left-50 translate-center bg-white rounded-full;
+  content: ' ';
+  height: 8px;
+  width: 8px;
+}
+
+.form-radio-label {
+  @apply ml-6;
+}
+
+.form-radio-input:checked + .form-radio-backdrop {
+  @apply border-blue-400 bg-blue-400;
+}
+
+.form-radio-input:checked ~ .form-radio-icon {
+  @apply opacity-100;
+}
+
