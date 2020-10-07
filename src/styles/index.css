@@ -1,12 +1,12 @@
+/* purgecss start ignore */
 @import "tailwindcss/base";
-
-/* Components */
 @import "tailwindcss/components";
+/* purgecss end ignore */
+@import "tailwindcss/utilities";
 
+/* Component */
 @import "./components/buttons.css";
 @import "./components/form.css";
 
 /* Utilities */
-@import "tailwindcss/utilities";
-
 @import "./utilities/translate-center.css";
