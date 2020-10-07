@@ -65,6 +65,11 @@
   @apply text-gray-600;
 }
 
+.form-select:hover,
+.form-select:focus {
+  @apply form-input:focus;
+}
+
 /* - Checkbox */
 
 .form-checkbox {
