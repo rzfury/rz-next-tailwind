@@ -20,14 +20,26 @@
   transition: border-color ease-out .2s;
 }
 
-/* For controls like checkbox and radio */
-.form-choicebox {
-
+.form-input\:read-only {
+  @apply bg-gray-100;
 }
 
 .form-input\:focus {
   @apply border-gray-600;
   outline: none !important;
+}
+
+/* For controls like checkbox and radio */
+.form-choicebox {
+  @apply relative flex cursor-pointer;
+}
+
+.form-choicebox input {
+  @apply absolute h-0 w-0 cursor-pointer hidden;
+}
+
+.form-choicebox input:disabled + [class*=-backdrop] {
+  @apply bg-gray-100;
 }
 
 /* - Field / FieldArea */
@@ -54,6 +66,10 @@
   @apply form-input:focus;
 }
 
+.form-text-input:read-only {
+  @apply form-input:read-only;
+}
+
 .form-textarea > .form-text-label {
   top: 1.4rem;
 }
@@ -71,14 +87,6 @@
 }
 
 /* - Checkbox */
-
-.form-checkbox {
-  @apply relative flex cursor-pointer;
-}
-
-.form-checkbox-input {
-  @apply absolute h-0 w-0 cursor-pointer hidden;
-}
 
 .form-checkbox-backdrop {
   @apply absolute top-0 left-0 border border-solid border-gray-400 rounded;
@@ -112,14 +120,6 @@
 }
 
 /* - Radio */
-
-.form-radio {
-  @apply relative flex cursor-pointer;
-}
-
-.form-radio-input {
-  @apply absolute h-0 w-0 cursor-pointer hidden;
-}
 
 .form-radio-backdrop {
   @apply absolute top-0 left-0 border border-solid border-gray-400 rounded-full;

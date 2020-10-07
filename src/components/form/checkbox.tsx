@@ -3,7 +3,7 @@ import conclass from '../../utility/conclass';
 
 export default function Checkbox(props: RazorWindProps.Form.Checkbox) {
   return (
-    <label {...props.containerProps} className={conclass('form-checkbox', props.containerProps?.className)}>
+    <label {...props.containerProps} className={conclass('form-choicebox', props.containerProps?.className)}>
       <span className="form-checkbox-control">
         <input {...props} type="checkbox" className="form-checkbox-input"/>
         <span className={conclass('form-checkbox-backdrop', props.backdropClassName)}></span>

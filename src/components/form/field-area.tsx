@@ -30,6 +30,8 @@ export default function FieldArea(props: RazorWindProps.Form.FieldArea) {
         }
         name={props.name}
         onChange={handleChange}
+        disabled={props.disabled}
+        readOnly={props.readonly}
       >
         {props.value}
       </textarea>

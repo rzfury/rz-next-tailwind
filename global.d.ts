@@ -52,6 +52,12 @@ declare namespace RazorWindProps {
       /** @type Input Name */
       name?: string;
 
+      /** @type Disable Input */
+      disabled?: boolean;
+
+      /** @type */
+      readonly?: boolean;
+
       /** @type Input OnChange Event */
       onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     }
@@ -77,6 +83,12 @@ declare namespace RazorWindProps {
 
       /** @type Input Value */
       value?: string;
+
+      /** @type Disable Input */
+      disabled?: boolean;
+
+      /** @type */
+      readonly?: boolean;
 
       /** @type Input OnChange Event */
       onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;

@@ -19,7 +19,7 @@ export default class ExampleForm extends React.Component {
             <Field label="First Name" name="firstName"/>
             <Field label="Last Name" name="lastName" />
           </FormGroup>
-          <FieldArea label="Note" name="note"/>
+          <FieldArea label="Note" name="note" disabled/>
           <Select
             label="Select Label"
             options={[
@@ -29,12 +29,12 @@ export default class ExampleForm extends React.Component {
             ]}
           />
           <FormGroup>
-            <Checkbox label="Choice 1" name="checkbox-a"/>
+            <Checkbox label="Choice 1" name="checkbox-a" disabled/>
             <Checkbox label="Choice 2" name="checkbox-b"/>
             <Checkbox label="Choice 3" name="checkbox-c"/>
           </FormGroup>
           <FormGroup>
-            <Radio label="Option 1" name="radio-a"/>
+            <Radio label="Option 1" name="radio-a" disabled/>
             <Radio label="Option 2" name="radio-a"/>
             <Radio label="Option 3" name="radio-a"/>
           </FormGroup>
