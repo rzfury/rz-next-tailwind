@@ -18,6 +18,11 @@ declare namespace RazorWindProps {
       label?: string;
     }
 
+    interface Radio extends React.InputHTMLAttributes<HTMLInputElement> {
+      label?: string;
+      name: string;
+    }
+
     interface Field {
       /** @type Container Class Name */
       className?: string;

@@ -6,6 +6,7 @@ import Field from '../components/form/field';
 import FieldArea from '../components/form/field-area';
 import FormGroup from '../components/form/group';
 import Select from '../components/form/select';
+import Radio from '../components/form/radio';
 
 export default class ExampleForm extends React.Component {
   render() {
@@ -27,9 +28,16 @@ export default class ExampleForm extends React.Component {
               { label: 'Option 3', value: 'val-3' },
             ]}
           />
-          <Checkbox label="Choice 1" name="checkbox-a"/>
-          <Checkbox label="Choice 2" name="checkbox-b"/>
-          <Checkbox label="Choice 3" name="checkbox-c"/>
+          <FormGroup>
+            <Checkbox label="Choice 1" name="checkbox-a"/>
+            <Checkbox label="Choice 2" name="checkbox-b"/>
+            <Checkbox label="Choice 3" name="checkbox-c"/>
+          </FormGroup>
+          <FormGroup>
+            <Radio label="Option 1" name="radio-a"/>
+            <Radio label="Option 2" name="radio-a"/>
+            <Radio label="Option 3" name="radio-a"/>
+          </FormGroup>
           <button className="btn-blue">Send</button>
         </Form>
       </div>
