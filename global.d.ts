@@ -7,6 +7,13 @@
 
 declare namespace RazorWindProps {
 
+  namespace Card {
+    interface Card {
+      asBody?: boolean;
+      shadow?: boolean;
+    }
+  }
+
   namespace Form {
     interface Form extends React.FormHTMLAttributes<HTMLFormElement> { }
 
