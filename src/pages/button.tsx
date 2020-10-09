@@ -26,15 +26,25 @@ export default function ExampleButton() {
         <Button rounded outline role="default">Default</Button>
         <Button rounded outline role="danger">Danger</Button>
       </div>
-      <div className="flex gap-y-2 mb-6">
-        <Button block role="primary">Primary</Button>
-        <Button block role="default">Default</Button>
-        <Button block role="danger">Danger</Button>
+      <div className="gap-y-2 mb-6">
+        <Button block role="primary" className="mb-4">Primary</Button>
+        <Button block role="default" className="mb-4">Default</Button>
+        <Button block role="danger" className="mb-4">Danger</Button>
       </div>
-      <div className="flex gap-y-2">
-        <Button block outline role="primary">Primary</Button>
-        <Button block outline role="default">Default</Button>
-        <Button block outline role="danger">Danger</Button>
+      <div className="gap-y-2">
+        <Button block outline role="primary" className="mb-4">Primary</Button>
+        <Button block outline role="default" className="mb-4">Default</Button>
+        <Button block outline role="danger" className="mb-4">Danger</Button>
+      </div>
+      <div className="gap-y-2 mb-6">
+        <Button rounded block role="primary" className="mb-4">Primary</Button>
+        <Button rounded block role="default" className="mb-4">Default</Button>
+        <Button rounded block role="danger" className="mb-4">Danger</Button>
+      </div>
+      <div className="gap-y-2">
+        <Button rounded block outline role="primary" className="mb-4">Primary</Button>
+        <Button rounded block outline role="default" className="mb-4">Default</Button>
+        <Button rounded block outline role="danger" className="mb-4">Danger</Button>
       </div>
     </div>
   );
