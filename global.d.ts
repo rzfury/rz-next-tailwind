@@ -29,11 +29,13 @@ declare namespace RazorWindProps {
     }
 
     interface AutoComplete {
-      label?: string;
-      source?: ((keyword: string) => string[]) | ((keyword: string) => AutoCompleteOption[]) | string[] | AutoCompleteOption[] | any;
-      minChar?: number;
       disabled?: boolean;
+      label?: string;
+      minChar?: number;
+      name?: string;
       readonly?: boolean;
+      onSelect?: (value: string) => void;
+      source?: ((keyword: string) => string[]) | ((keyword: string) => AutoCompleteOption[]) | string[] | AutoCompleteOption[] | any;
     }
     
     type AutoCompleteOption = { label: string, value: string };

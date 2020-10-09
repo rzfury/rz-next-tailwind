@@ -3,6 +3,7 @@ import conclass from '../../utility/conclass';
 
 class AutoComplete extends React.Component<RazorWindProps.Form.AutoComplete, RazorWindStates.Form.AutoComplete> {
   private inputRef: HTMLInputElement;
+  private valueRef: HTMLInputElement;
 
   constructor(props: RazorWindProps.Form.AutoComplete) {
     super(props);
@@ -40,7 +41,7 @@ class AutoComplete extends React.Component<RazorWindProps.Form.AutoComplete, Raz
     if (inputValue.length > minChar) {
       if (Array.isArray(this.props.source)) {
         const matches = (this.props.source as any).filter(
-          (val: string) => val.toLowerCase().includes(inputValue.toLowerCase())
+          (val: string | RazorWindProps.Form.AutoCompleteOption) => typeof(val) === 'string' ? val.toLowerCase().includes(inputValue.toLowerCase()) : val.label.toLowerCase().includes(inputValue.toLowerCase())
         );
         this.setState({ matches, highlightIndex: -1 });
       }
@@ -51,15 +52,18 @@ class AutoComplete extends React.Component<RazorWindProps.Form.AutoComplete, Raz
     }
   }
 
-  onSelect = (value: string) => {
-    this.inputRef.value = value;
+  onSelect = (value: string, label?: string) => {
+    this.valueRef.value = value;
+    this.inputRef.value = label ? label : value;
     this.setState({ showDropdown: false });
+    this.props.onSelect && this.props.onSelect(value);
   }
 
   render() {
     return (
       <div className="relative">
         <label className="text-gray-600">{this.props.label}</label>
+        <input ref={ref=>this.valueRef=ref} type="hidden" name={this.props.name}/>
         <input
           ref={ref => this.inputRef = ref}
           type="text"
@@ -73,9 +77,9 @@ class AutoComplete extends React.Component<RazorWindProps.Form.AutoComplete, Raz
             .map((val, i) => (
               <a
                 className={conclass('p-2 hover:bg-gray-200 cursor-pointer', (this.state.highlightIndex === i) && 'bg-gray-200')}
-                key={val.toString()}
-                onClick={() => this.onSelect(typeof (val) === 'string' ? val : val.value)}>
-                {val}
+                key={typeof(val) === 'string' ? val : val.label}
+                onClick={() => this.onSelect(typeof (val) === 'string' ? val : val.value, typeof(val) === 'string' ? undefined : val.label)}>
+                {typeof(val) === 'string' ? val : val.label}
               </a>
             ))
           }

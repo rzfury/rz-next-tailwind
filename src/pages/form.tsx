@@ -11,6 +11,22 @@ import Radio from '../components/form/radio';
 import Select from '../components/form/select';
 
 export default class ExampleForm extends React.Component {
+  autoCompleteSource = (keyword: string) => {
+    return new Promise((resolve, reject) => {
+      fetch('http://www.json-generator.com/api/json/get/cfJpSfFLhe?indent=2')
+        .then(async (res: any) => {
+          let data = await res.json();
+          data = data.filter(
+            (val: any) => val.label.toLowerCase().includes(keyword.toLowerCase())
+          );
+          resolve(data);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+  }
+
   render() {
     return (
       <div className="p-5">
@@ -24,31 +40,18 @@ export default class ExampleForm extends React.Component {
           <AutoComplete
             label="Auto Complete (static source)"
             source={[
-              'Choice 1',
-              'Choice 2',
-              'Option 1',
-              'Option 2',
-              'Option 3',
+              { label: 'Choice 1', value: 'aaaaaaa' },
+              { label: 'Choice 2', value: 'bbbb' },
+              { label: 'Choice 3', value: 'cccc' },
             ]}
+            onSelect={(value) => console.log(value)}
           />
           <AutoComplete
             label="Auto Complete (dynamic source)"
-            source={async (keyword) => {
-              let matches: any = [];
-
-              await fetch('http://www.json-generator.com/api/json/get/cfJpSfFLhe?indent=2')
-                .then(async (res: any) => {
-                  const data = await res.json();
-                  matches = data.filter(
-                    (val: any) => val.value().toLowerCase().includes(keyword.toLowerCase())
-                  );
-                  return (matches as any);
-                })
-                .catch((err) => {
-
-                });
-              
+            source={async (keyword: any) => {
+              return await this.autoCompleteSource(keyword);
             }}
+            onSelect={(value) => console.log(value)}
           />
           <FieldArea label="Note" name="note" disabled/>
           <Select
