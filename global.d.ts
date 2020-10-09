@@ -25,8 +25,18 @@ declare namespace RazorWindProps {
     interface Form extends React.FormHTMLAttributes<HTMLFormElement> { }
 
     interface Group {
-      children: JSX.Element[];
+      children: JSX.Element[] | JSX.Element;
     }
+
+    interface AutoComplete {
+      label?: string;
+      source?: ((keyword: string) => string[]) | ((keyword: string) => AutoCompleteOption[]) | string[] | AutoCompleteOption[] | any;
+      minChar?: number;
+      disabled?: boolean;
+      readonly?: boolean;
+    }
+    
+    type AutoCompleteOption = { label: string, value: string };
 
     interface Checkbox extends React.InputHTMLAttributes<HTMLInputElement> {
       label?: string;
@@ -136,4 +146,14 @@ declare namespace RazorWindProps {
     }
   }
 
+}
+
+declare namespace RazorWindStates {
+  namespace Form {
+    interface AutoComplete {
+      highlightIndex: number;
+      matches: (RazorWindProps.Form.AutoCompleteOption | string)[];
+      showDropdown: boolean;
+    }
+  }
 }
