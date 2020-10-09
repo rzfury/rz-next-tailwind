@@ -6,6 +6,20 @@
  */
 
 declare namespace RazorWindProps {
+  interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    children?: string | JSX.Element[];
+    role?: 'danger' | 'default' | 'primary';
+    outline?: boolean;
+    rounded?: boolean;
+    block?: boolean;
+  }
+
+  namespace Card {
+    interface Card {
+      asBody?: boolean;
+      shadow?: boolean;
+    }
+  }
 
   namespace Form {
     interface Form extends React.FormHTMLAttributes<HTMLFormElement> { }
