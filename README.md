@@ -5,4 +5,4 @@ npm i
 npm run dev
 ```
 
-Preview: https://rzfury.github.io/next-tailwind/
+Preview: https://rzfury.github.io/rz-next-tailwind/
