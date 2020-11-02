@@ -1,14 +1,32 @@
 import React from 'react';
+import fetch from 'node-fetch';
 
+import AutoComplete from '../components/form/autocomplete';
 import Checkbox from '../components/form/checkbox';
-import Form from '../components/form/form';
 import Field from '../components/form/field';
 import FieldArea from '../components/form/field-area';
+import Form from '../components/form/form';
 import FormGroup from '../components/form/group';
-import Select from '../components/form/select';
 import Radio from '../components/form/radio';
+import Select from '../components/form/select';
 
 export default class ExampleForm extends React.Component {
+  autoCompleteSource = (keyword: string) => {
+    return new Promise((resolve, reject) => {
+      fetch('http://www.json-generator.com/api/json/get/cfJpSfFLhe?indent=2')
+        .then(async (res: any) => {
+          let data = await res.json();
+          data = data.filter(
+            (val: any) => val.label.toLowerCase().includes(keyword.toLowerCase())
+          );
+          resolve(data);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+  }
+
   render() {
     return (
       <div className="p-5">
@@ -19,6 +37,22 @@ export default class ExampleForm extends React.Component {
             <Field label="First Name" name="firstName"/>
             <Field label="Last Name" name="lastName" />
           </FormGroup>
+          <AutoComplete
+            label="Auto Complete (static source)"
+            source={[
+              { label: 'Choice 1', value: 'aaaaaaa' },
+              { label: 'Choice 2', value: 'bbbb' },
+              { label: 'Choice 3', value: 'cccc' },
+            ]}
+            onSelect={(value) => console.log(value)}
+          />
+          <AutoComplete
+            label="Auto Complete (dynamic source)"
+            source={async (keyword: any) => {
+              return await this.autoCompleteSource(keyword);
+            }}
+            onSelect={(value) => console.log(value)}
+          />
           <FieldArea label="Note" name="note" disabled/>
           <Select
             label="Select Label"
