@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from '../components/card/card';
-import CardBody from '../components/card/body';
+import Card from '../../components/card/card';
+import CardBody from '../../components/card/body';
 
 export default function ExampleCard() {
   return (

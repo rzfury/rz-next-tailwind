@@ -1,14 +1,15 @@
 import React from 'react';
 import fetch from 'node-fetch';
 
-import AutoComplete from '../components/form/autocomplete';
-import Checkbox from '../components/form/checkbox';
-import Field from '../components/form/field';
-import FieldArea from '../components/form/field-area';
-import Form from '../components/form/form';
-import FormGroup from '../components/form/group';
-import Radio from '../components/form/radio';
-import Select from '../components/form/select';
+import AutoComplete from '../../components/form/autocomplete';
+import Checkbox from '../../components/form/checkbox';
+import Field from '../../components/form/field';
+import FieldArea from '../../components/form/field-area';
+import Form from '../../components/form/form';
+import FormGroup from '../../components/form/group';
+import Radio from '../../components/form/radio';
+import Select from '../../components/form/select';
+import Button from '../../components/button';
 
 export default class ExampleForm extends React.Component {
   autoCompleteSource = (keyword: string) => {
@@ -72,7 +73,7 @@ export default class ExampleForm extends React.Component {
             <Radio label="Option 2" name="radio-a"/>
             <Radio label="Option 3" name="radio-a"/>
           </FormGroup>
-          <button className="btn-blue">Send</button>
+          <Button role="primary">Send</Button>
         </Form>
       </div>
     );

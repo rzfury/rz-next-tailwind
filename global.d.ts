@@ -18,6 +18,7 @@ declare namespace RazorWindProps {
     interface Card {
       asBody?: boolean;
       shadow?: boolean;
+      children: string | JSX.Element[] | JSX.Element;
     }
   }
 
@@ -25,7 +26,7 @@ declare namespace RazorWindProps {
     interface Form extends React.FormHTMLAttributes<HTMLFormElement> { }
 
     interface Group {
-      children: JSX.Element[] | JSX.Element;
+      children: string | JSX.Element[] | JSX.Element;
     }
 
     interface AutoComplete {
