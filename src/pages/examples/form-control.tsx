@@ -1,14 +1,16 @@
 import React from 'react';
 import fetch from 'node-fetch';
 
-import AutoComplete from '../../components/form/autocomplete';
-import Checkbox from '../../components/form/checkbox';
-import Field from '../../components/form/field';
-import FieldArea from '../../components/form/field-area';
-import Form from '../../components/form/form';
-import FormGroup from '../../components/form/group';
-import Radio from '../../components/form/radio';
-import Select from '../../components/form/select';
+import {
+  AutoComplete,
+  Checkbox,
+  Field,
+  FieldArea,
+  Form,
+  FormGroup,
+  Select,
+  Radio
+} from '../../components/form';
 import Button from '../../components/button';
 
 export default class ExampleForm extends React.Component {
