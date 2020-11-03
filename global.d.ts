@@ -6,6 +6,7 @@
  */
 
 declare namespace RazorWindProps {
+
   interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: string | JSX.Element[];
     role?: 'danger' | 'default' | 'primary';
@@ -18,7 +19,9 @@ declare namespace RazorWindProps {
     interface Card {
       asBody?: boolean;
       shadow?: boolean;
-      children: string | JSX.Element[] | JSX.Element;
+      children: React.ReactNode;
+      title?: React.ReactNode;
+      footer?: React.ReactNode;
     }
   }
 
@@ -26,7 +29,7 @@ declare namespace RazorWindProps {
     interface Form extends React.FormHTMLAttributes<HTMLFormElement> { }
 
     interface Group {
-      children: string | JSX.Element[] | JSX.Element;
+      children: React.ReactNode;
     }
 
     interface AutoComplete {
