@@ -2,6 +2,17 @@ import React from 'react';
 import conclass from '../../utility/conclass';
 
 function Card(props: RazorWindProps.Card.Card) {
+  const renderSimpleTitle = (content: any, isFooter?: boolean) => {
+    if (content) {
+      return (
+        <div className={conclass('bg-gray-200 p-4', isFooter ? 'rounded-b' : 'rounded-t', props.shadow ? '' : 'border-b border-gray-300')}>{content}</div>
+      );
+    }
+    else {
+      return <></>;
+    }
+  };
+
   return (
     <div className={conclass('block rounded', props.shadow ? 'shadow-md' : 'border-solid border border-gray-300')}>
       {renderSimpleTitle(props.title)}
@@ -13,16 +24,5 @@ function Card(props: RazorWindProps.Card.Card) {
     </div>
   );
 }
-
-const renderSimpleTitle = (props: any, isFooter?: boolean) => {
-  if (props.content) {
-    return (
-      <div className={conclass('bg-gray-200 p-4', isFooter ? 'rounded-b' : 'rounded-t', props.shadow ? '' : 'border-b border-gray-300')}>{props.content}</div>
-    );
-  }
-  else {
-    return <></>;
-  }
-};
 
 export default Card;
