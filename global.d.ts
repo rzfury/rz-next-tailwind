@@ -123,6 +123,13 @@ declare namespace RazorWindProps {
       /** @type Input OnChange Event */
       onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
     }
+
+    interface FieldGroup extends React.HTMLAttributes<HTMLDivElement> { }
+
+    namespace FieldGroup {
+      interface Left extends React.HTMLAttributes<HTMLDivElement> { }
+      interface Right extends React.HTMLAttributes<HTMLDivElement> { }
+    }
         
     interface Select extends React.SelectHTMLAttributes<HTMLSelectElement> {
       label?: string | JSX.Element;
