@@ -1,6 +1,9 @@
 import React from 'react';
 import conclass from '../../utility/conclass';
 
+/**
+ * `AutoComplete` is experimental and is not recommended to use it right now.
+ */
 class AutoComplete extends React.Component<RazorWindProps.Form.AutoComplete, RazorWindStates.Form.AutoComplete> {
   private inputRef: HTMLInputElement;
   private valueRef: HTMLInputElement;
