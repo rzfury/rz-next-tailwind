@@ -5,7 +5,11 @@
   transition: background-color, border-color, color; 
 }
 
-.btn:hover {
+.btn:disabled {
+  @apply opacity-50 cursor-default;
+}
+
+.btn:hover:not(:disabled) {
   @apply border-transparent bg-gray-600;
 }
 
@@ -17,7 +21,7 @@
   @apply border border-solid border-gray-500 bg-transparent text-gray-500;
 }
 
-.btn-outline:hover {
+.btn-outline:hover:not(:disabled) {
   @apply text-white;
 }
 
@@ -29,7 +33,7 @@
   @apply bg-transparent border-red-500 text-red-500;
 }
 
-.btn-danger:hover {
+.btn-danger:hover:not(:disabled) {
   @apply bg-red-600;
 }
 
@@ -41,6 +45,6 @@
   @apply bg-transparent border-blue-500 text-blue-500;
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   @apply bg-blue-600;
 }
