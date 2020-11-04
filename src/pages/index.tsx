@@ -23,7 +23,7 @@ export default class Index extends React.Component {
       (value: any, i: number) => {
         if (i % 2 == 0) {
           return (
-            <Link href={`/examples/${value.link}`} passHref>
+            <Link href={`./examples/${value.link}`} passHref>
               <a className="px-4 py-2 block bg-gray-200 hover:bg-gray-300">
                 <span>{value.label}</span>
               </a>
@@ -32,7 +32,7 @@ export default class Index extends React.Component {
         }
         else {
           return (
-            <Link href={`/examples/${value.link}`} passHref>
+            <Link href={`./examples/${value.link}`} passHref>
               <a className="px-4 py-2 block bg-white hover:bg-gray-300">
                 <span>{value.label}</span>
               </a>
