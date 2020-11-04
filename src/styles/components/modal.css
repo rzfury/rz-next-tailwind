@@ -1,0 +1,17 @@
+/* - Modal */
+
+.modal {
+  @apply fixed transition-opacity;
+}
+
+.modal.modal-show {
+  @apply opacity-100 pointer-events-auto;
+}
+
+.modal.modal-hide {
+  @apply opacity-0 pointer-events-none;
+}
+
+.modal .modal-backdrop {
+  @apply bg-gray-800 opacity-25;
+}
