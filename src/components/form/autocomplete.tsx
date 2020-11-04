@@ -1,6 +1,9 @@
 import React from 'react';
 import conclass from '../../utility/conclass';
 
+/**
+ * `AutoComplete` is experimental and is not recommended to use it right now.
+ */
 class AutoComplete extends React.Component<RazorWindProps.Form.AutoComplete, RazorWindStates.Form.AutoComplete> {
   private inputRef: HTMLInputElement;
   private valueRef: HTMLInputElement;
@@ -16,21 +19,27 @@ class AutoComplete extends React.Component<RazorWindProps.Form.AutoComplete, Raz
   }
 
   componentDidMount() {
-    this.inputRef.addEventListener('keydown', (event) => {
-      if(event.key === 'ArrowUp' && this.state.highlightIndex > 0) {
-        event.preventDefault();
-        this.setState(prev => ({ highlightIndex: prev.highlightIndex - 1 }));
-      }
-      else if(event.key === 'ArrowDown' && this.state.highlightIndex < this.state.matches.length - 1) {
-        event.preventDefault();
-        this.setState(prev => ({ highlightIndex: prev.highlightIndex + 1 }));
-      }
-      else if(event.key === 'Enter') {
-        event.preventDefault();
-        const value = this.state.matches[this.state.highlightIndex];
-        this.onSelect(typeof(value) === 'string' ? value : value.value);
-      }
-    });
+    this.inputRef.addEventListener('keydown', this.keydownHandler);
+  }
+
+  componentWillUnmount() {
+    this.inputRef.removeEventListener('keydown', this.keydownHandler);
+  }
+
+  keydownHandler = (event: KeyboardEvent) => {
+    if(event.key === 'ArrowUp' && this.state.highlightIndex > 0) {
+      event.preventDefault();
+      this.setState(prev => ({ highlightIndex: prev.highlightIndex - 1 }));
+    }
+    else if(event.key === 'ArrowDown' && this.state.highlightIndex < this.state.matches.length - 1) {
+      event.preventDefault();
+      this.setState(prev => ({ highlightIndex: prev.highlightIndex + 1 }));
+    }
+    else if(event.key === 'Enter') {
+      event.preventDefault();
+      const value = this.state.matches[this.state.highlightIndex];
+      this.onSelect(typeof(value) === 'string' ? value : value.value);
+    }
   }
 
   searchMatch = async (event: React.ChangeEvent<HTMLInputElement>) => {

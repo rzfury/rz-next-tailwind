@@ -6,10 +6,11 @@ import {
   Checkbox,
   Field,
   FieldArea,
+  FieldGroup,
   Form,
   FormGroup,
   Select,
-  Radio
+  Radio,
 } from '../../components/form';
 import Button from '../../components/button';
 
@@ -40,6 +41,11 @@ export default class ExampleForm extends React.Component {
             <Field label="First Name" name="firstName"/>
             <Field label="Last Name" name="lastName" />
           </FormGroup>
+          <FieldGroup>
+            <FieldGroup.Addons>Field Group Example</FieldGroup.Addons>
+            <Field label="Example Field" name="exampleField"/>
+            <FieldGroup.Button role="danger">Clear</FieldGroup.Button>
+          </FieldGroup>
           <AutoComplete
             label="Auto Complete (static source)"
             source={[
