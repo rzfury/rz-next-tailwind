@@ -19,7 +19,7 @@ declare namespace RazorWindProps {
     interface Card {
       asBody?: boolean;
       shadow?: boolean;
-      children: React.ReactNode;
+      children?: React.ReactNode;
       title?: React.ReactNode;
       footer?: React.ReactNode;
     }
