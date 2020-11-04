@@ -1,6 +1,12 @@
 {
-  "name": "rz-nextjs-tailwind-typescript",
-  "version": "0.0.1",
+  "name": "rz-next-tailwind",
+  "version": "0.1.0",
+  "author": {
+    "name": "RZFury"
+  },
+  "repository": {
+    "url": "https://github.com/rzfury/rz-next-tailwind"
+  },
   "scripts": {
     "dev": "next -p 8040",
     "build": "next build",
@@ -10,7 +16,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "heroicons": "^0.4.2",
-    "next": "latest",
+    "next": "^9.5.4",
     "node-fetch": "^2.6.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
