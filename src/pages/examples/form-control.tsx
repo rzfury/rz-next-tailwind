@@ -42,9 +42,9 @@ export default class ExampleForm extends React.Component {
             <Field label="Last Name" name="lastName" />
           </FormGroup>
           <FieldGroup>
-            <FieldGroup.Left>Field Group Example</FieldGroup.Left>
+            <FieldGroup.Addons>Field Group Example</FieldGroup.Addons>
             <Field label="Example Field" name="exampleField"/>
-            <FieldGroup.Right>Right</FieldGroup.Right>
+            <FieldGroup.Button role="danger">Clear</FieldGroup.Button>
           </FieldGroup>
           <AutoComplete
             label="Auto Complete (static source)"

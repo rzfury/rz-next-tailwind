@@ -1,15 +1,15 @@
 import React from 'react';
+import Button from '../button';
 
 class FieldGroup extends React.Component<RazorWindProps.Form.FieldGroup, {}> {
-  public static Left = (props: RazorWindProps.Form.FieldGroup.Left) => {
+  public static Addons = (props: RazorWindProps.Form.FieldGroup.Addons) => {
     return (
-      <div {...props} className="form-fieldgroup-left">{props.children}</div>
+      <div {...props} className="form-fieldgroup-addons">{props.children}</div>
     );
   };
-
-  public static Right = (props: RazorWindProps.Form.FieldGroup.Right) => {
+  public static Button = (props: RazorWindProps.Button) => {
     return (
-      <div {...props} className="form-fieldgroup-right">{props.children}</div>
+      <Button {...props} rounded={false}>{props.children}</Button>
     );
   };
 

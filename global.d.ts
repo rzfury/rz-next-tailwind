@@ -8,7 +8,7 @@
 declare namespace RazorWindProps {
 
   interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    children?: string | JSX.Element[];
+    children?: React.ReactNode;
     role?: 'danger' | 'default' | 'primary';
     outline?: boolean;
     rounded?: boolean;
@@ -74,7 +74,7 @@ declare namespace RazorWindProps {
       labelProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
 
       /** @type Label Children or Label Text */
-      label?: string | JSX.Element;
+      label?: React.ReactNode;
 
       /** @type Enable Floating Label */
       labelFloat?: boolean;
@@ -103,7 +103,7 @@ declare namespace RazorWindProps {
       labelProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
 
       /** @type Label Children or Label Text */
-      label?: string | JSX.Element;
+      label?: React.ReactNode;
 
       /** @type Enable Floating Label */
       labelFloat?: boolean;
@@ -127,12 +127,11 @@ declare namespace RazorWindProps {
     interface FieldGroup extends React.HTMLAttributes<HTMLDivElement> { }
 
     namespace FieldGroup {
-      interface Left extends React.HTMLAttributes<HTMLDivElement> { }
-      interface Right extends React.HTMLAttributes<HTMLDivElement> { }
+      interface Addons extends React.HTMLAttributes<HTMLDivElement> { }
     }
         
     interface Select extends React.SelectHTMLAttributes<HTMLSelectElement> {
-      label?: string | JSX.Element;
+      label?: React.ReactNode;
       options: { label: string, value: string }[];
     }
   }
