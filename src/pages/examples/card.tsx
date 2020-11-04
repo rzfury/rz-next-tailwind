@@ -7,27 +7,43 @@ export default function ExampleCard() {
       <span className="text-gray-700 text-2xl">TailwindCSS - Card</span>
       <hr className="my-5" />
       <Card>
-        Card plain
+        <Card.Body>
+          Card with Body
+        </Card.Body>
       </Card>
-      <br/>
-      <Card asBody>
-        Card Body
+      <br />
+      <Card>
+        Card without Body
       </Card>
-      <br/>
-      <Card shadow asBody>
-        Card Body + Shadow
+      <br />
+      <Card shadow>
+        <Card.Body>
+          Card Shadow
+        </Card.Body>
       </Card>
-      <br/>
-      <Card asBody title="Simple title">
-        Card Body + Simple Title
+      <br />
+      <Card title="Simple heading">
+        <Card.Body>
+          Card with Simple heading
+        </Card.Body>
       </Card>
-      <br/>
-      <Card shadow asBody title="Simple title">
-        Card Body + Shadow + Simple Title
+      <br />
+      <Card shadow title="Simple heading">
+        <Card.Body>
+          Card Shadow with Simple heading
+        </Card.Body>
       </Card>
-      <br/>
-      <Card shadow asBody title="Simple title" footer="Simple Footer">
-        Card Body + Shadow + Simple Title + Simple Footer
+      <br />
+      <Card shadow>
+        <Card.Heading className="bg-blue-800 text-white">
+          <div className="flex justify-between">
+            <span>Customizable heading</span>
+            <button className="py-2 px-4 text-2xl" style={{ margin: '-1rem'}}>&times;</button>
+          </div>
+        </Card.Heading>
+        <Card.Body>
+          Card Shadow with Customizable heading
+        </Card.Body>
       </Card>
     </div>
   );
