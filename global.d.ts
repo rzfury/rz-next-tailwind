@@ -15,13 +15,18 @@ declare namespace RazorWindProps {
     block?: boolean;
   }
 
+  interface Card extends React.HTMLAttributes<HTMLDivElement> {
+    /** @type Use shadow instead of border */
+    shadow?: boolean;
+
+    /** @type Simple card title */
+    title?: string;
+  }
+
   namespace Card {
-    interface Card {
-      asBody?: boolean;
+    interface Body extends React.HTMLAttributes<HTMLDivElement> { }
+    interface Heading extends React.HTMLAttributes<HTMLDivElement> {
       shadow?: boolean;
-      children?: React.ReactNode;
-      title?: React.ReactNode;
-      footer?: React.ReactNode;
     }
   }
 
@@ -41,7 +46,7 @@ declare namespace RazorWindProps {
       onSelect?: (value: string) => void;
       source?: ((keyword: string) => string[]) | ((keyword: string) => AutoCompleteOption[]) | string[] | AutoCompleteOption[] | any;
     }
-    
+
     type AutoCompleteOption = { label: string, value: string };
 
     interface Checkbox extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -129,7 +134,7 @@ declare namespace RazorWindProps {
     namespace FieldGroup {
       interface Addons extends React.HTMLAttributes<HTMLDivElement> { }
     }
-        
+
     interface Select extends React.SelectHTMLAttributes<HTMLSelectElement> {
       label?: React.ReactNode;
       options: { label: string, value: string }[];
