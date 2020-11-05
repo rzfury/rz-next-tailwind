@@ -7,6 +7,7 @@
 /* Component */
 @import "./components/buttons.css";
 @import "./components/form.css";
+@import "./components/modal.css";
 
 /* Utilities */
 @import "./utilities/translate-center.css";

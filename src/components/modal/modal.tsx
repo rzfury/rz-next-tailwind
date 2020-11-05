@@ -1,8 +1,6 @@
 import React from 'react';
-import * as icon from 'heroicons';
 
 import Card from '../card/card';
-import CardHeading from '../card/heading';
 import conclass from '../../utility/conclass';
 
 class Modal extends React.Component<any, any> {
@@ -16,14 +14,19 @@ class Modal extends React.Component<any, any> {
 
   render() {
     return (
-      <div className={conclass('modal ', this.props.show ? 'modal-show' : 'modal-hide')}>
-        <div className="modal-backdrop"></div>
+      <div className={conclass('modal', this.props.show ? 'modal-show' : 'modal-hide')}>
+        <div className="modal-backdrop" onClick={this.props.onHide}></div>
         <div className="modal-dialog">
           <Card>
-            <CardHeading>
-
-            </CardHeading>
-            {this.props.children}
+            <Card.Heading>
+            <div className="flex justify-between">
+              <span>{this.props.title || 'Modal Title'}</span>
+              <button className="py-2 px-4 text-2xl -m-4" onClick={this.props.onHide}>&times;</button>
+            </div>
+            </Card.Heading>
+            <Card.Body>
+              {this.props.children}
+            </Card.Body>
           </Card>
         </div>
       </div>

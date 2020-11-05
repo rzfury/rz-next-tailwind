@@ -1,7 +1,8 @@
 /* - Modal */
 
 .modal {
-  @apply fixed transition-opacity;
+  @apply fixed top-0 left-0;
+  transition: opacity ease-out .25s;
 }
 
 .modal.modal-show {
@@ -13,5 +14,24 @@
 }
 
 .modal .modal-backdrop {
-  @apply bg-gray-800 opacity-25;
+  @apply absolute w-screen h-screen;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal .modal-dialog {
+  @apply absolute w-screen h-screen;
+  transition: transform ease-out .25s;
+}
+
+.modal.modal-hide .modal-dialog {
+  transform: translateY(-10%);
+}
+
+.modal.modal-show .modal-dialog {
+  transform: translateY(0);
+}
+
+.modal .modal-dialog > div {
+  @apply mx-auto mt-32;
+  max-width: 700px;
 }

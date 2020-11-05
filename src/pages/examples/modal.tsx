@@ -13,8 +13,8 @@ export default function ExampleCard() {
     <div className="p-5">
       <span className="text-gray-700 text-2xl">TailwindCSS - Modal</span>
       <hr className="my-5" />
-      <Button role="primary" onClick={handleShowModal}/>
-      <Modal show={showModal}/>
+      <Button role="primary" onClick={handleShowModal}>Show Modal</Button>
+      <Modal show={showModal} onHide={handleShowModal}/>
     </div>
   );
 }
