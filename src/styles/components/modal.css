@@ -1,0 +1,42 @@
+/* - Modal */
+
+.modal {
+  @apply fixed top-0 left-0 w-screen h-screen;
+  z-index: 69420;
+  transition: opacity ease-out .25s;
+}
+
+.modal.modal-show {
+  @apply opacity-100 pointer-events-auto;
+}
+
+.modal.modal-hide {
+  @apply opacity-0 pointer-events-none;
+}
+
+.modal .modal-backdrop {
+  @apply absolute w-screen h-screen;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal .modal-dialog {
+  @apply block mx-auto mt-32;
+  max-width: 700px;
+  transition: transform ease-out .25s;
+}
+
+.modal.modal-hide .modal-dialog {
+  transform: translateY(-50px);
+}
+
+.modal.modal-show .modal-dialog {
+  transform: translateY(0);
+}
+
+.modal .modal-card {
+  @apply bg-white;
+}
+
+.modal .modal-card-head {
+  @apply bg-gray-300;
+}
