@@ -4,13 +4,13 @@ import conclass from '../../utility/conclass';
 class Card extends React.Component<RazorWindProps.Card, any> {
   public static Body = (props: RazorWindProps.Card.Body) => {
     return (
-      <div className="p-4">{props.children}</div>
+      <div {...props} className={conclass('p-4', props.className)}>{props.children}</div>
     );
   }
 
   public static Heading = (props: RazorWindProps.Card.Heading) => {
     return (
-      <div className={conclass('bg-gray-200 p-4 rounded-t', props.shadow ? 'shadow-sm' : 'border-b border-gray-300', props.className)}>{props.children}</div>
+      <div {...props} className={conclass('bg-gray-200 p-4 rounded-t', props.shadow ? 'shadow-sm' : 'border-b border-gray-300', props.className)}>{props.children}</div>
     );
   }
 
@@ -27,7 +27,7 @@ class Card extends React.Component<RazorWindProps.Card, any> {
 
   render() {
     return (
-      <div className={conclass('block rounded', this.props.shadow ? 'shadow-md' : 'border-solid border border-gray-300')}>
+      <div className={conclass('block rounded', this.props.shadow ? 'shadow-md' : 'border-solid border border-gray-300', this.props.className)}>
         {this.renderSimpleTitle(this.props.title)}
         {this.props.children}
       </div>
