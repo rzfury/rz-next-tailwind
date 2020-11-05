@@ -1,7 +1,8 @@
 /* - Modal */
 
 .modal {
-  @apply fixed top-0 left-0;
+  @apply fixed top-0 left-0 w-screen h-screen;
+  z-index: 69420;
   transition: opacity ease-out .25s;
 }
 
@@ -19,19 +20,23 @@
 }
 
 .modal .modal-dialog {
-  @apply absolute w-screen h-screen;
+  @apply block mx-auto mt-32;
+  max-width: 700px;
   transition: transform ease-out .25s;
 }
 
 .modal.modal-hide .modal-dialog {
-  transform: translateY(-10%);
+  transform: translateY(-50px);
 }
 
 .modal.modal-show .modal-dialog {
   transform: translateY(0);
 }
 
-.modal .modal-dialog > div {
-  @apply mx-auto mt-32;
-  max-width: 700px;
+.modal .modal-card {
+  @apply bg-white;
+}
+
+.modal .modal-card-head {
+  @apply bg-gray-300;
 }
