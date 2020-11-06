@@ -7,6 +7,10 @@
 
 declare namespace RazorWindProps {
 
+  interface Layout extends React.HTMLAttributes<HTMLElement> {
+    useSideBar?: boolean;
+  }
+
   interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode;
     role?: 'danger' | 'default' | 'primary';
@@ -152,14 +156,15 @@ declare namespace RazorWindProps {
     }
 
     interface Link {
-      dropdown?: boolean;
+      dropdown?: Dropdown[];
       href?: string;
-      items?: DropdownItem[];
       label: string;
     }
 
-    interface DropdownItem {
-
+    interface Dropdown {
+      noParent?: boolean;
+      href?: string;
+      label: string;
     }
   }
 

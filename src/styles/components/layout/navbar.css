@@ -1,0 +1,7 @@
+.navbar-dropdown {
+  @apply absolute mt-2 bg-white shadow-md rounded;
+}
+
+.navbar-dropdown-item {
+  @apply block;
+}
