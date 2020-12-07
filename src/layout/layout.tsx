@@ -5,6 +5,10 @@ import SideBar from './sidebar/sidebar';
 export default function Layout(props: RazorWindProps.Layout) {
   const navbarLinks: RazorWindProps.Navigation.Link[] = [
     {
+      label: 'Home',
+      href: ''
+    },
+    {
       label: 'Examples',
       href: '/examples',
       dropdown: [
