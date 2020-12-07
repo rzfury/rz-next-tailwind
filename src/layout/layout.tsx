@@ -29,7 +29,7 @@ export default function Layout(props: RazorWindProps.Layout) {
   }
   else {
     return (
-      <div className="">
+      <div className="block">
         <Nav brand="RZ-NextTW" links={navbarLinks} />
         <main>{props.children}</main>
       </div>

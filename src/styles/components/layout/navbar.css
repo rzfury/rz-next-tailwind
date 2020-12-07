@@ -5,3 +5,25 @@
 .navbar-dropdown-item {
   @apply block;
 }
+
+/* CLASS: responsive */
+
+/* - Mobile */
+.desktop-navbar {
+  @apply hidden;
+}
+
+.mobile-navbar {
+  @apply block;
+}
+
+/* - Desktop */
+@screen sm {
+  .desktop-navbar {
+    @apply flex items-center gap-x-4;
+  }
+
+  .mobile-navbar {
+    @apply hidden;
+  }
+}
