@@ -159,6 +159,7 @@ declare namespace RazorWindProps {
       dropdown?: Dropdown[];
       href?: string;
       label: string;
+      mobile?: boolean;
     }
 
     interface Dropdown {

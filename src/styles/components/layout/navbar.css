@@ -14,7 +14,27 @@
 }
 
 .mobile-navbar {
-  @apply block;
+  @apply flex flex-grow justify-end items-center;
+}
+
+.mobile-navbar > .toggle-collapse {
+  @apply z-50 relative rounded;
+  height: 22px;
+  width: 30px;
+}
+
+.mobile-navbar > .toggle-collapse > .toggle-bars-wrapper {
+  @apply absolute inset-0 flex flex-col justify-between;
+}
+
+.mobile-navbar > .toggle-collapse > .toggle-bars-wrapper > .toggle-bar {
+  @apply block bg-white;
+  height: 2px;
+  width: 30px;
+}
+
+.navbar-collapse {
+  @apply fixed inset-0 bottom-auto bg-blue-500;
 }
 
 /* - Desktop */

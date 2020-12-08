@@ -3,13 +3,19 @@ import Link from 'next/link';
 import conclass from '../../utility/conclass';
 
 export default function NavLink(props: RazorWindProps.Navigation.Link) {
+  const NavItem = ({ children }) => {
+    return props.mobile
+      ? (props.dropdown ? <li className="relative">{children}</li> : <li>{children}</li>)
+      : (props.dropdown ? <div className="relative">{children}</div> : <div>{children}</div>);
+  }
+
   if (props.dropdown) {
     const [active, setActive] = React.useState(false);
     const ref = useRef(null);
-    
+
     const dropdownCloseHandler = (event) => {
       event.button !== 0 && event.preventDefault();
-      if(event.key === 'Escape' || event.button === 0) {
+      if (event.key === 'Escape' || event.button === 0) {
         setActive(false);
         document.removeEventListener('keydown', dropdownCloseHandler);
         document.removeEventListener('click', dropdownCloseHandler);
@@ -18,7 +24,7 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
 
     const dropdownCb = useCallback(
       () => {
-        if(active) {
+        if (active) {
           setActive(false);
           document.removeEventListener('keydown', dropdownCloseHandler);
           document.removeEventListener('click', dropdownCloseHandler);
@@ -29,7 +35,7 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
           document.addEventListener('click', dropdownCloseHandler);
         }
       },
-    [active]);
+      [active]);
 
     const dropdownItems = props.dropdown.map(
       item => (
@@ -47,7 +53,7 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
     }, []);
 
     return (
-      <li className="relative">
+      <NavItem>
         <a ref={ref} className="cursor-pointer flex gap-x-1 px-1 py-2 border-b-2 border-blue-500 hover:border-white" onClick={dropdownCb}>
           <span>{props.label}</span>
           <svg className="fill-current text-white mt-2" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
@@ -57,16 +63,16 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
           </svg>
         </a>
         <div className={conclass('navbar-dropdown py-2', active ? 'visible' : 'hidden')}>{dropdownItems}</div>
-      </li>
+      </NavItem>
     );
   }
   else {
     return (
-      <li>
+      <NavItem>
         <Link href={props.href} passHref>
           <a className="flex px-1 py-2 border-b-2 border-blue-500 hover:border-white">{props.label}</a>
         </Link>
-      </li>
+      </NavItem>
     );
   }
 }
