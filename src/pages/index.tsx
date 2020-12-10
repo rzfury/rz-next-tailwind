@@ -1,6 +1,7 @@
 import React from "react";
 import Link from 'next/link';
 import Card from "../components/card/card";
+import Layout from "../layout/layout";
 
 export default class Index extends React.Component {
   examples: any = [
@@ -51,7 +52,7 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <div>
+      <Layout>
         <div className="py-20">
           <h1 className="text-5xl text-center text-accent-1">
             Next.js + Tailwind CSS
@@ -66,7 +67,7 @@ export default class Index extends React.Component {
             {this.renderExamples()}
           </Card>
         </div>
-      </div>
+      </Layout>
     )
   }
 }

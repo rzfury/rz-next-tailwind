@@ -6,6 +6,9 @@ module.exports = {
   purge: ['./src/components/**/*.{js,ts,jsx,tsx}', './src/pages/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      spacing: {
+        '18': '4.5rem',
+      },
       colors: {
         'accent-1': '#333',
       },
