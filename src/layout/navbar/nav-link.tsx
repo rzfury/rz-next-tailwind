@@ -18,24 +18,28 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
     const itemsRef = useRef(null);
 
     const dropdownCloseHandler = (event) => {
+      console.log(event);
       event.button !== 0 && event.preventDefault();
       if (event.key === 'Escape' || event.button === 0) {
-        setActive(false);
+        // setActive(false);
         document.removeEventListener('keydown', dropdownCloseHandler);
         document.removeEventListener('click', dropdownCloseHandler);
       }
     }
 
     const dropdownCb = () => {
-      if (active) {
-        setActive(false);
-        document.removeEventListener('keydown', dropdownCloseHandler);
-        document.removeEventListener('click', dropdownCloseHandler);
-      }
-      else {
-        setActive(true);
-        document.addEventListener('keydown', dropdownCloseHandler);
-        document.addEventListener('click', dropdownCloseHandler);
+      setActive(!active);
+
+      if (!props.mobile) {
+        if (active) {
+          document.removeEventListener('keydown', dropdownCloseHandler);
+          document.removeEventListener('click', dropdownCloseHandler);
+        }
+        else {
+          document.addEventListener('keydown', dropdownCloseHandler);
+          document.addEventListener('click', dropdownCloseHandler);
+        }
+
       }
     };
 

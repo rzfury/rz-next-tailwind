@@ -40,11 +40,11 @@ export default class ExampleForm extends React.Component {
           <hr className="my-5" />
           <Form autoComplete="false">
             <FormGroup>
-              <Field label="First Name" name="firstName" />
-              <Field label="Last Name" name="lastName" />
+              <Field label="First Name" name="firstName" labelFloat/>
+              <Field label="Last Name" name="lastName" labelFloat/>
             </FormGroup>
             <FieldGroup>
-              <FieldGroup.Addons>Field Group Example</FieldGroup.Addons>
+              <FieldGroup.Addons>Example</FieldGroup.Addons>
               <Field label="Example Field" name="exampleField" />
               <FieldGroup.Button role="danger">Clear</FieldGroup.Button>
             </FieldGroup>

@@ -38,7 +38,7 @@ class AutoComplete extends React.Component<RazorWindProps.Form.AutoComplete, Raz
     else if(event.key === 'Enter') {
       event.preventDefault();
       const value = this.state.matches[this.state.highlightIndex];
-      this.onSelect(typeof(value) === 'string' ? value : value.value);
+      this.onSelect(typeof(value) === 'string' ? value : value.value, typeof(value) === 'string' ? value : value.label);
     }
   }
 

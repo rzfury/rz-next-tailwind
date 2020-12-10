@@ -9,7 +9,7 @@ function Nav(props: RazorWindProps.Navigation.Nav) {
 
   return (
     <React.Fragment>
-      <nav className="flex fixed w-screen gap-x-10 px-8 py-5 text-white bg-blue-500 shadow-md">
+      <nav className="flex fixed w-screen gap-x-10 px-8 py-5 z-50 text-white bg-blue-500 shadow-md">
         <NavBrand text={props.brand} />
         <ul className="desktop-navbar">
           {props.links.map(function (link) {
