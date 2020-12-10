@@ -6,7 +6,7 @@ export default function Layout(props: RazorWindProps.Layout) {
   const navbarLinks: RazorWindProps.Navigation.Link[] = [
     {
       label: 'Home',
-      href: ''
+      href: '/'
     },
     {
       label: 'Examples',
@@ -16,7 +16,11 @@ export default function Layout(props: RazorWindProps.Layout) {
         { href: '/card', label: 'Card' },
         { href: '/form-control', label: 'Form Control' }
       ],
-    }
+    },
+    {
+      label: 'A',
+      href: '/a'
+    },
   ];
 
   if (props.useSideBar) {
@@ -31,7 +35,7 @@ export default function Layout(props: RazorWindProps.Layout) {
     return (
       <div className="block">
         <Nav brand="RZ-NextTW" links={navbarLinks} />
-        <main>{props.children}</main>
+        <main className="pt-18">{props.children}</main>
       </div>
     );
   }

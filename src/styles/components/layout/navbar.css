@@ -2,6 +2,15 @@
   @apply absolute mt-2 bg-white shadow-md rounded;
 }
 
+.navbar-dropdown.apply-mobile {
+  @apply relative block w-screen m-0 h-0 shadow-none rounded-none overflow-hidden;
+  transition: height ease-out .2s;
+}
+
+.navbar-dropdown.apply-mobile.collapsed {
+  @apply h-auto;
+}
+
 .navbar-dropdown-item {
   @apply block;
 }
@@ -18,23 +27,67 @@
 }
 
 .mobile-navbar > .toggle-collapse {
-  @apply z-50 relative rounded;
-  height: 22px;
+  @apply relative rounded;
+  height: 20px;
   width: 30px;
 }
 
+.mobile-navbar > .toggle-collapse:focus {
+  @apply outline-none;
+}
+
 .mobile-navbar > .toggle-collapse > .toggle-bars-wrapper {
-  @apply absolute inset-0 flex flex-col justify-between;
+  @apply absolute inset-0;
 }
 
 .mobile-navbar > .toggle-collapse > .toggle-bars-wrapper > .toggle-bar {
-  @apply block bg-white;
+  @apply absolute translate-y-center bg-white;
   height: 2px;
   width: 30px;
 }
 
+.mobile-navbar > .toggle-collapse > .toggle-bars-wrapper > .toggle-bar:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.mobile-navbar > .toggle-collapse > .toggle-bars-wrapper > .toggle-bar:nth-child(2) {
+  top: 50%;
+  left: 0;
+}
+
+.mobile-navbar > .toggle-collapse > .toggle-bars-wrapper > .toggle-bar:nth-child(3) {
+  top: 100%;
+  left: 0;
+}
+
 .navbar-collapse {
-  @apply fixed inset-0 bottom-auto bg-blue-500;
+  @apply fixed top-0 left-0 w-screen h-0 bg-blue-500 overflow-hidden;
+  transition: height ease-out .2s;
+}
+
+.navbar-collapse.collapsed {
+  @apply h-screen;
+}
+
+.navbar-collapse.collapsed + .toggle-collapse > .toggle-bars-wrapper > .toggle-bar {
+  animation-duration: 0.2s, 0.5s;
+  animation-delay: 0s, 0.3s;
+  animation-fill-mode: forwards, forwards;
+  animation-iteration-count: 1, 1;
+  animation-timing-function: cubic-bezier(0.16, 0.85, 0.79, 1.02), cubic-bezier(0.16, 0.85, 0.79, 1.02);
+}
+
+.navbar-collapse.collapsed + .toggle-collapse > .toggle-bars-wrapper > .toggle-bar:nth-child(1) {
+  animation-name: ANIM_BARS1_KF1, ANIM_BARS1_KF2;
+}
+
+.navbar-collapse.collapsed + .toggle-collapse > .toggle-bars-wrapper > .toggle-bar:nth-child(2) {
+  animation-name: ANIM_BARS2_KF1, ANIM_BARS2_KF2;
+}
+
+.navbar-collapse.collapsed + .toggle-collapse > .toggle-bars-wrapper > .toggle-bar:nth-child(3) {
+  animation-name: ANIM_BARS3_KF1;
 }
 
 /* - Desktop */
@@ -45,5 +98,54 @@
 
   .mobile-navbar {
     @apply hidden;
+  }
+}
+
+@keyframes ANIM_BARS1_KF1 {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes ANIM_BARS2_KF1 {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes ANIM_BARS3_KF1 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ANIM_BARS1_KF2 {
+  0% {
+    top: 100%;
+    transform: rotateZ(0deg);
+  }
+  100% {
+    top: 50%;
+    transform: rotateZ(45deg);
+  }
+}
+
+@keyframes ANIM_BARS2_KF2 {
+  0% {
+    top: 100%;
+    transform: rotateZ(0deg);
+  }
+  100% {
+    top: 50%;
+    transform: rotateZ(-45deg);
   }
 }
