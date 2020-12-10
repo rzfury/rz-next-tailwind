@@ -44,7 +44,7 @@ export default class ExampleForm extends React.Component {
           <FieldGroup>
             <FieldGroup.Addons>Field Group Example</FieldGroup.Addons>
             <Field label="Example Field" name="exampleField"/>
-            <FieldGroup.Button role="danger">Clear</FieldGroup.Button>
+            <FieldGroup.Button role="danger" onClick={() => {}}>Clear</FieldGroup.Button>
           </FieldGroup>
           <AutoComplete
             label="Auto Complete (static source)"
