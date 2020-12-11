@@ -1,5 +1,4 @@
 import React from 'react';
-import fetch from 'node-fetch';
 
 import Layout from '../../layout/layout';
 import {
@@ -14,13 +13,13 @@ import {
   Radio,
 } from '../../components/form';
 import Button from '../../components/button';
+import http from '../../services/http';
 
 export default class ExampleForm extends React.Component {
   autoCompleteSource = (keyword: string) => {
     return new Promise((resolve, reject) => {
-      fetch('http://www.json-generator.com/api/json/get/cfJpSfFLhe?indent=2')
-        .then(async (res: any) => {
-          let data = await res.json();
+      http.get('http://www.json-generator.com/api/json/get/cfJpSfFLhe', { indent: 2 })
+        .then(async (data: any) => {
           data = data.filter(
             (val: any) => val.label.toLowerCase().includes(keyword.toLowerCase())
           );
