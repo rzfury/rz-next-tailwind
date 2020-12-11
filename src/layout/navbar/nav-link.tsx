@@ -21,23 +21,25 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
       console.log(event);
       event.button !== 0 && event.preventDefault();
       if (event.key === 'Escape' || event.button === 0) {
-        // setActive(false);
+        setActive(false);
         document.removeEventListener('keydown', dropdownCloseHandler);
         document.removeEventListener('click', dropdownCloseHandler);
       }
     }
 
-    const dropdownCb = () => {
+    const dropdownCb = (e) => {
       setActive(!active);
 
       if (!props.mobile) {
         if (active) {
           document.removeEventListener('keydown', dropdownCloseHandler);
           document.removeEventListener('click', dropdownCloseHandler);
+          e.stopPropagation();
         }
         else {
           document.addEventListener('keydown', dropdownCloseHandler);
           document.addEventListener('click', dropdownCloseHandler);
+          e.stopPropagation();
         }
 
       }
@@ -45,8 +47,8 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
 
     const dropdownItems = props.dropdown.map(
       item => (
-        <div className={conclass(props.mobile ? 'text-white' : 'whitespace-no-wrap text-gray-700 hover:bg-gray-200', router.pathname === `${!item.noParent ? props.href : ''}${item.href}` ? (props.mobile && 'bg-blue-300') : 'bg-blue-400 ')}>
-          <a href={`${!item.noParent ? props.href : ''}${item.href}`} className="px-8 py-3 block">{item.label}</a>
+        <div className={conclass(props.mobile ? 'text-white' : 'whitespace-no-wrap text-gray-700 hover:bg-gray-200', router.pathname === `${!item.noParent ? props.href : ''}${item.href}` ? (props.mobile && 'bg-blue-300') : (props.mobile && 'bg-blue-400'))}>
+          <a href={`${!item.noParent ? props.href : ''}${item.href}`} className={props.mobile ? 'px-8 py-3 block' : 'px-4 py-2 block'}>{item.label}</a>
         </div>
       )
     );
@@ -63,7 +65,7 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
         <a
           ref={ref}
           className={props.mobile
-            ? conclass('flex justify-between px-4 py-4', router.pathname === props.href ? 'bg-blue-400' : 'hover:bg-blue-400')
+            ? conclass('flex justify-between px-4 py-4', router.pathname === props.href && 'bg-blue-400')
             : conclass('cursor-pointer flex gap-x-1 px-1 py-2 border-b-2', router.pathname === props.href ? 'border-white' : 'border-blue-500 hover:border-white')
           }
           onClick={dropdownCb}
@@ -75,7 +77,7 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
             </g>
           </svg>
         </a>
-        <div ref={itemsRef} className={conclass('navbar-dropdown', props.mobile ? 'apply-mobile' : 'py-2', props.mobile ? (active && 'collapsed') : (active ? 'visible' : 'hidden'))}>{dropdownItems}</div>
+        <div ref={itemsRef} className={conclass('navbar-dropdown', props.mobile ? 'apply-mobile' : 'py-2 min-w-max', props.mobile ? (active && 'collapsed') : (active ? 'visible' : 'hidden'))}>{dropdownItems}</div>
       </NavItem>
     );
   }
@@ -85,7 +87,7 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
         <Link href={props.href} passHref>
           <a
             className={props.mobile
-              ? conclass('flex px-4 py-4', router.pathname === props.href ? 'bg-blue-400' : 'hover:bg-white hover:text-blue-500')
+              ? conclass('flex px-4 py-4', router.pathname === props.href && 'bg-blue-400')
               : conclass('flex px-1 py-2 border-b-2', router.pathname === props.href ? 'border-white' : 'border-blue-500 hover:border-white')
             }
           >
