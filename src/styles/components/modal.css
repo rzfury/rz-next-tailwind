@@ -1,7 +1,7 @@
 /* - Modal */
 
 .modal {
-  @apply fixed top-0 left-0 w-screen h-screen;
+  @apply fixed top-0 left-0 w-screen h-screen overflow-auto;
   z-index: 69420;
   transition: opacity ease-out .25s;
 }
@@ -15,12 +15,12 @@
 }
 
 .modal .modal-backdrop {
-  @apply absolute w-screen h-screen;
+  @apply fixed inset-0;
   background: rgba(0, 0, 0, 0.5);
 }
 
 .modal .modal-dialog {
-  @apply block mx-auto mt-32;
+  @apply block mx-auto my-8 px-4;
   max-width: 700px;
   transition: transform ease-out .25s;
 }
@@ -39,4 +39,10 @@
 
 .modal .modal-card-head {
   @apply bg-gray-300;
+}
+
+@screen sm {
+  .modal .modal-dialog {
+    @apply mt-32;
+  }
 }

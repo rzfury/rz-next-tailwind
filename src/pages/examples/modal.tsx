@@ -8,9 +8,9 @@ import Modal from '../../components/modal/modal';
 export default function ExampleCard() {
   const [showModal, setModal] = React.useState(false);
 
-  const handleShowModal = React.useCallback(() => {
+  const handleShowModal = () => {
     setModal(!showModal);
-  }, [showModal]);
+  };
 
   return (
     <Layout>
