@@ -8,7 +8,7 @@
 declare namespace RazorWindProps {
 
   interface Layout extends React.HTMLAttributes<HTMLElement> {
-    useSideBar?: boolean;
+    
   }
 
   interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {

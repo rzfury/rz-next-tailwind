@@ -17,6 +17,10 @@ export default class Index extends React.Component {
       link: 'form-control',
       label: 'Form Control'
     },
+    {
+      link: 'modal',
+      label: 'Modal'
+    },
   ];
 
   renderExamples = () => {
@@ -58,7 +62,7 @@ export default class Index extends React.Component {
             Next.js + Tailwind CSS
           </h1>
         </div>
-        <div className="w-1/2 mx-auto">
+        <div className="mx-5 sm:w-1/2 sm:mx-auto">
           <Card>
             <h1 className="text-2xl font-semibold pl-4 py-2">
               Examples

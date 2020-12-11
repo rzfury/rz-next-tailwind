@@ -23,20 +23,10 @@ export default function Layout(props: RazorWindProps.Layout) {
     },
   ];
 
-  if (props.useSideBar) {
-    return (
-      <div className="flex min-h-screen">
-        <SideBar />
-        <main className="flex-grow">{props.children}</main>
-      </div>
-    );
-  }
-  else {
-    return (
-      <div className="block">
-        <Nav brand="RZ-NextTW" links={navbarLinks} />
-        <main className="pt-18">{props.children}</main>
-      </div>
-    );
-  }
+  return (
+    <div className="block">
+      <Nav brand="RZ-NextTW" links={navbarLinks} />
+      <main className="pt-18">{props.children}</main>
+    </div>
+  );
 }
