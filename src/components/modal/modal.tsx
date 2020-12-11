@@ -3,8 +3,8 @@ import React from 'react';
 import Card from '../card/card';
 import conclass from '../../utility/conclass';
 
-class Modal extends React.Component<any, any> {
-  constructor(props: any) {
+class Modal extends React.Component<RazorWindProps.Modal, RazorWindStates.Modal> {
+  constructor(props: RazorWindProps.Modal) {
     super(props);
 
     this.state = {
