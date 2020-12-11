@@ -14,7 +14,8 @@ export default function Layout(props: RazorWindProps.Layout) {
       dropdown: [
         { href: '/button', label: 'Button' },
         { href: '/card', label: 'Card' },
-        { href: '/form-control', label: 'Form Control' }
+        { href: '/form-control', label: 'Form Control' },
+        { href: '/modal', label: 'Modal' },
       ],
     },
     {
