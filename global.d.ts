@@ -27,6 +27,11 @@ declare namespace RazorWindProps {
     title?: string;
   }
 
+  interface Modal extends React.HTMLAttributes<HTMLDivElement> {
+    show?: boolean;
+    onHide?: () => void;
+  }
+
   namespace Card {
     interface Body extends React.HTMLAttributes<HTMLDivElement> { }
     interface Heading extends React.HTMLAttributes<HTMLDivElement> {
@@ -168,7 +173,6 @@ declare namespace RazorWindProps {
       label: string;
     }
   }
-
 }
 
 declare namespace RazorWindStates {
@@ -178,5 +182,9 @@ declare namespace RazorWindStates {
       matches: (RazorWindProps.Form.AutoCompleteOption | string)[];
       showDropdown: boolean;
     }
+  }
+
+  interface Modal {
+    show?: boolean;
   }
 }
