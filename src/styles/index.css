@@ -7,6 +7,7 @@
 /* Component */
 @import "./components/layout/layout.css";
 @import "./components/layout/navbar.css";
+@import "./components/layout/sidebar.css";
 @import "./components/buttons.css";
 @import "./components/form.css";
 @import "./components/modal.css";
