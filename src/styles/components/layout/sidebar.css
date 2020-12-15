@@ -1,0 +1,42 @@
+.layout-sidebar {
+  @apply fixed block bg-blue-900 h-screen shadow-lg overflow-hidden z-60;
+  width: 85vw;
+  max-width: 0px;
+  transition: max-width cubic-bezier(.26,.09,.29,1) .5s;
+}
+
+.layout-sidebar.open {
+  max-width: 90vw;
+}
+
+.sidebar-backdrop {
+  @apply fixed bg-black z-50 opacity-0;
+  transition: opacity ease-out .5s;
+}
+
+.layout-sidebar.open + .sidebar-backdrop {
+  @apply w-screen h-screen opacity-75;
+}
+
+.sidebar-nav > :not(:first-child) {
+  @apply border-t border-blue-400
+}
+
+.sidebar-dropdown {
+  @apply max-h-0 overflow-hidden bg-blue-800;
+  transition: max-height ease-out .5s;
+}
+
+.sidebar-dropdown.collapse {
+  max-height: 20rem !important;
+}
+
+@screen sm {
+  .layout-sidebar.open {
+    max-width: 200px;
+  }
+
+  .layout-sidebar.open + .sidebar-backdrop {
+    @apply w-0 h-0;
+  }
+}

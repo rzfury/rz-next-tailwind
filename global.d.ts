@@ -8,7 +8,13 @@
 declare namespace RazorWindProps {
 
   interface Layout extends React.HTMLAttributes<HTMLElement> {
-    
+    sidebar?: boolean;
+  }
+
+  interface Sidebar extends React.HTMLAttributes<HTMLElement> {
+    show?: boolean;
+    links?: Sidebar.Link[];
+    nav?: Navigation;
   }
 
   interface Button extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -149,10 +155,14 @@ declare namespace RazorWindProps {
     interface Nav {
       brand?: string;
       links: Link[];
+      sidebar?: boolean;
+      isSidebarOpen?: boolean;
+      onToggleSidebar?: () => void;
     }
 
     interface Brand {
       text: string | undefined;
+      show?: boolean;
     }
 
     interface Link {
@@ -166,6 +176,13 @@ declare namespace RazorWindProps {
       noParent?: boolean;
       href?: string;
       label: string;
+    }
+  }
+
+  namespace Sidebar {
+    interface Link {
+      label?: string;
+      links?: Navigation.Link[];
     }
   }
 

@@ -1,3 +1,12 @@
+.navbar {
+  @apply flex fixed w-screen py-5 text-white bg-blue-500 shadow-md;
+}
+
+.navbar-brand {
+  @apply text-2xl whitespace-nowrap z-50;
+  transition: opacity ease-out .5s;
+}
+
 .navbar-dropdown {
   @apply absolute mt-2 bg-white shadow-md rounded;
 }
