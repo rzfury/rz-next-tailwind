@@ -9,7 +9,7 @@ function Nav(props: RazorWindProps.Navigation.Nav) {
 
   return (
     <React.Fragment>
-      <nav className={conclass('navbar', props.sidebar ? 'pl-2 pr-8' : 'gap-x-10 px-8')}>
+      <nav className={conclass('navbar items-center', props.sidebar ? 'pl-2 pr-8' : 'gap-x-10 px-8')}>
         <button className={conclass(props.sidebar ? 'px-2 mr-2' : 'hidden')} onClick={props.onToggleSidebar}>
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
