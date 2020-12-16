@@ -1,5 +1,5 @@
 .navbar {
-  @apply flex fixed w-screen py-5 text-white bg-blue-500 shadow-md;
+  @apply flex fixed w-screen py-5 z-10 text-white bg-blue-500 shadow-md;
 }
 
 .navbar-brand {
