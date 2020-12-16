@@ -38,7 +38,7 @@ export default function Layout(props: RazorWindProps.Layout) {
       {sidebar && <div className="sidebar-backdrop" onClick={sidebarHandle}></div>}
       <div className={conclass('wrapper-main', sidebarOpen && 'sidebar-open')}>
         <Nav sidebar={sidebar} isSidebarOpen={sidebarOpen} onToggleSidebar={sidebarHandle} brand="RZ-NextTW" links={navbarLinks}/>
-        <main className="pt-18">{props.children}</main>
+        <main className="pt-20">{props.children}</main>
       </div>
     </div>
   );
