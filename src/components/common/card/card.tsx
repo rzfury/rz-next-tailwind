@@ -1,5 +1,5 @@
 import React from 'react';
-import conclass from '../../utility/conclass';
+import conclass from '../../../utility/conclass';
 
 class Card extends React.Component<RazorWindProps.Card, any> {
   public static Body = (props: RazorWindProps.Card.Body) => {

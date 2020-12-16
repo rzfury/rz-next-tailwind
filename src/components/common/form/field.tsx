@@ -1,5 +1,5 @@
 import React from 'react';
-import conclass from '../../utility/conclass';
+import conclass from '../../../utility/conclass';
 
 export default function Field(props: RazorWindProps.Form.Field) {
   const [hasValue, setHasValue] = React.useState(false);

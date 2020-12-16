@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Card from '../card/card';
-import conclass from '../../utility/conclass';
+import conclass from '../../../utility/conclass';
 
 class Modal extends React.Component<RazorWindProps.Modal, RazorWindStates.Modal> {
   constructor(props: RazorWindProps.Modal) {

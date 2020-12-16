@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 import Layout from '../../layout/layout';
-import Button from '../../components/button';
-import Modal from '../../components/modal/modal';
+import Button from '../../components/common/button';
+import Modal from '../../components/common/modal/modal';
 
 export default function ExampleCard() {
   const [showModal, setModal] = React.useState(false);

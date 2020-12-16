@@ -5,7 +5,7 @@ import FieldArea from './field-area';
 import FieldGroup from './field-group';
 import Form from './form';
 import FormGroup from './group';
-import Radio from '../../components/form/radio';
+import Radio from './radio';
 import Select from './select';
 
 export {

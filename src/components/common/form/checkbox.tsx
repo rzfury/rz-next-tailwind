@@ -1,5 +1,5 @@
 import React from 'react';
-import conclass from '../../utility/conclass';
+import conclass from '../../../utility/conclass';
 
 export default function Checkbox(props: RazorWindProps.Form.Checkbox) {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from 'next/link';
-import Card from "../components/card/card";
+import Card from "../components/common/card/card";
 import Layout from "../layout/layout";
 
 export default class Index extends React.Component {

@@ -11,8 +11,8 @@ import {
   FormGroup,
   Select,
   Radio,
-} from '../../components/form';
-import Button from '../../components/button';
+} from '../../components/common/form';
+import Button from '../../components/common/button';
 import http from '../../services/http';
 
 export default class ExampleForm extends React.Component {
