@@ -8,7 +8,7 @@ export default function Dropdown(props: any) {
 
   const renderDropdownItem = (item: any) => {
     return (
-      <a className="block px-4 py-2 hover:bg-gray-200" href={item.href}>{item.label}</a>
+      <a className="block whitespace-nowrap px-4 py-2 hover:bg-gray-200" href={item.href}>{item.label}</a>
     );
   }
 
