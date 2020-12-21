@@ -1,3 +1,4 @@
+import '../lang/i18next';
 import '../styles/index.css'
 
 function MyApp({ Component, pageProps }) {

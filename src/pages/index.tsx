@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react';
 import Link from 'next/link';
-import Card from "../components/common/card/card";
-import Layout from "../layout/layout";
 
-export default class Index extends React.Component {
+import Layout from '../layout/layout';
+import Card from '../components/common/card/card';
+import { withTL } from '../components/hoc/with-tl';
+
+class Index extends React.Component<any, any> {
   examples: any = [
     {
       link: 'button',
@@ -65,7 +67,7 @@ export default class Index extends React.Component {
         <div className="mx-5 sm:w-1/2 sm:mx-auto">
           <Card>
             <h1 className="text-2xl font-semibold pl-4 py-2">
-              Examples
+              {this.props.t('pages.index.examples')}
             </h1>
             {/* Accordion Link, future feature */}
             {this.renderExamples()}
@@ -75,3 +77,5 @@ export default class Index extends React.Component {
     )
   }
 }
+
+export default withTL(Index);
