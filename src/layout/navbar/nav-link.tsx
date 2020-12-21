@@ -18,7 +18,6 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
     const itemsRef = useRef(null);
 
     const dropdownCloseHandler = (event) => {
-      console.log(event);
       event.button !== 0 && event.preventDefault();
       if (event.key === 'Escape' || event.button === 0) {
         setActive(false);
