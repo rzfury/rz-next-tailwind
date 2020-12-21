@@ -14,12 +14,20 @@ export default class Index extends React.Component {
       label: 'Card'
     },
     {
+      link: 'dropdown',
+      label: 'Dropdown'
+    },
+    {
       link: 'form-control',
       label: 'Form Control'
     },
     {
       link: 'modal',
       label: 'Modal'
+    },
+    {
+      link: 'snackbar',
+      label: 'Snackbar'
     },
   ];
 
