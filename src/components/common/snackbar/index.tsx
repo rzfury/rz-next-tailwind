@@ -22,7 +22,7 @@ export default class Snackbar extends React.Component<any, any> {
 
   render() {
     return (
-      <div className="fixed flex flex-col bottom-0 left-0 px-12 py-10 z-100 pointer-events-none">
+      <div className="fixed flex flex-col bottom-0 left-0 px-4 py-4 sm:px-12 sm:py-10 z-100 pointer-events-none">
         {this.state.elements}
       </div>
     );
