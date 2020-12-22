@@ -16,12 +16,20 @@ class Index extends React.Component<any, any> {
       label: 'Card'
     },
     {
+      link: 'dropdown',
+      label: 'Dropdown'
+    },
+    {
       link: 'form-control',
       label: 'Form Control'
     },
     {
       link: 'modal',
       label: 'Modal'
+    },
+    {
+      link: 'snackbar',
+      label: 'Snackbar'
     },
   ];
 
