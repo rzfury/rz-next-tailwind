@@ -1,0 +1,37 @@
+.snackbar-alert {
+  @apply flex flex-shrink items-center mt-2 bg-gray-900 p-2 text-white pointer-events-auto;
+  box-shadow: 0px 0px 16px -5px #000000;
+  animation-name: SNACKBAR_ENTER;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-duration: .2s;
+}
+
+.snackbar-alert.headout {
+  animation-name: SNACKBAR_HEADOUT;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-duration: .2s;
+}
+
+@keyframes SNACKBAR_ENTER {
+  from {
+    transform: translateY(10rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+@keyframes SNACKBAR_HEADOUT {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
