@@ -59,9 +59,10 @@ declare namespace RazorWindProps {
       name?: string;
       readonly?: boolean;
       onSelect?: (value: string) => void;
-      source?: ((keyword: string) => string[]) | ((keyword: string) => AutoCompleteOption[]) | string[] | AutoCompleteOption[] | any;
+      source?: AutoCompleteSource;
     }
 
+    type AutoCompleteSource = ((keyword: string) => string[]) | ((keyword: string) => AutoCompleteOption[]) | string[] | AutoCompleteOption[] | any;
     type AutoCompleteOption = { label: string, value: string };
 
     interface Checkbox extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -188,6 +189,37 @@ declare namespace RazorWindProps {
     interface Link {
       label?: string;
       links?: Navigation.Link[];
+    }
+  }
+
+  namespace Formaker {
+    interface InputSchema {
+      type: 'field' | 'group' | 'textarea' | 'radio' | 'checkbox' | 'select' | 'autocomplete';
+      name?: string;
+      label?: string;
+      required?: boolean;
+      option?: any;
+      group?: 'none' | 'field' | 'form';
+      formGroupItem?: FormGroupItemInputSchema[];
+      fieldGroupItem?: {
+        left?: FieldGroupItemInputSchema[];
+        right?: FieldGroupItemInputSchema[];
+      };
+      autoCompleteSource?: AutoCompleteSource;
+    }
+
+    interface FormGroupItemInputSchema {
+      type: 'field' | 'radio' | 'checkbox';
+      name?: string;
+      label?: string;
+      required?: boolean;
+      option?: any;
+    }
+
+    interface FieldGroupItemInputSchema {
+      type: 'addons' | 'button';
+      content?: React.ReactNode;
+      buttonOption?: Button;
     }
   }
 

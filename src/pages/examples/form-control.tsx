@@ -13,7 +13,7 @@ import {
   Radio,
 } from '../../components/common/form';
 import Button from '../../components/common/button';
-import http from '../../services/http';
+import http from '../../libraries/http';
 
 export default class ExampleForm extends React.Component {
   autoCompleteSource = (keyword: string) => {
