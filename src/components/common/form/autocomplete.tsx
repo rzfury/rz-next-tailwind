@@ -4,11 +4,11 @@ import conclass from '../../../utility/conclass';
 /**
  * `AutoComplete` is experimental and is not recommended to use it right now.
  */
-class AutoComplete extends React.Component<RazorWindProps.Form.AutoComplete, RazorWindStates.Form.AutoComplete> {
+class AutoComplete extends React.Component<RZNTProps.Form.AutoComplete, RZNTStates.Form.AutoComplete> {
   private inputRef: HTMLInputElement;
   private valueRef: HTMLInputElement;
 
-  constructor(props: RazorWindProps.Form.AutoComplete) {
+  constructor(props: RZNTProps.Form.AutoComplete) {
     super(props);
 
     this.state = {
@@ -50,7 +50,7 @@ class AutoComplete extends React.Component<RazorWindProps.Form.AutoComplete, Raz
     if (inputValue.length > minChar) {
       if (Array.isArray(this.props.source)) {
         const matches = (this.props.source as any).filter(
-          (val: string | RazorWindProps.Form.AutoCompleteOption) => typeof(val) === 'string' ? val.toLowerCase().includes(inputValue.toLowerCase()) : val.label.toLowerCase().includes(inputValue.toLowerCase())
+          (val: string | RZNTProps.Form.AutoCompleteOption) => typeof(val) === 'string' ? val.toLowerCase().includes(inputValue.toLowerCase()) : val.label.toLowerCase().includes(inputValue.toLowerCase())
         );
         this.setState({ matches, highlightIndex: -1 });
       }

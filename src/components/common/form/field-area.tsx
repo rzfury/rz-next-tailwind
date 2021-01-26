@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FieldArea(props: RazorWindProps.Form.FieldArea) {
+export default function FieldArea(props: RZNTProps.Form.FieldArea) {
   const [hasValue, setHasValue] = React.useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {

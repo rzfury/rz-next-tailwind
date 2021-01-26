@@ -1,4 +1,9 @@
-# NextJS Template: Typescript + Tailwind CSS
+# RZNT: NextJS Template with Tailwind CSS
+
+```
+Features:
+    1. Pre-existing components like layout, buttons, card, modal, dropdowns, etc.
+```
 
 ```
 npm i

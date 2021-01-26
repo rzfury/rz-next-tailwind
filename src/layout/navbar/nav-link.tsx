@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import conclass from '../../utility/conclass';
 
-export default function NavLink(props: RazorWindProps.Navigation.Link) {
+export default function NavLink(props: RZNTProps.Navigation.Link) {
   const router = useRouter();
 
   const NavItem = function ({ children }) {

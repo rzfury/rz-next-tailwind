@@ -1,14 +1,14 @@
 import React from 'react';
 import conclass from '../../../utility/conclass';
 
-class Card extends React.Component<RazorWindProps.Card, any> {
-  public static Body = (props: RazorWindProps.Card.Body) => {
+class Card extends React.Component<RZNTProps.Card, any> {
+  public static Body = (props: RZNTProps.Card.Body) => {
     return (
       <div {...props} className={conclass('p-4', props.className)}>{props.children}</div>
     );
   }
 
-  public static Heading = (props: RazorWindProps.Card.Heading) => {
+  public static Heading = (props: RZNTProps.Card.Heading) => {
     return (
       <div {...props} className={conclass('bg-gray-200 p-4 rounded-t', props.shadow ? 'shadow-sm' : 'border-b border-gray-300', props.className)}>{props.children}</div>
     );
