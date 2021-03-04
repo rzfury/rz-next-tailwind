@@ -6,6 +6,10 @@ import Layout from "../layout/layout";
 export default class Index extends React.Component {
   examples: any = [
     {
+      link: 'aos',
+      label: 'Animate on Scroll'
+    },
+    {
       link: 'button',
       label: 'Button'
     },
