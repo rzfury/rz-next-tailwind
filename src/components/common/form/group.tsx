@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function FormGroup(props: RazorWindProps.Form.Group) {
+export default function FormGroup(props: RZNTProps.Form.Group) {
   return <div className="form-group">{props.children}</div>;
 }

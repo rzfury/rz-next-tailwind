@@ -1,7 +1,7 @@
 import React from 'react';
 import conclass from '../../../utility/conclass';
 
-export default function Checkbox(props: RazorWindProps.Form.Checkbox) {
+export default function Checkbox(props: RZNTProps.Form.Checkbox) {
   return (
     <label {...props.containerProps} className={conclass('form-choicebox', props.containerProps?.className)}>
       <span className="form-checkbox-control">

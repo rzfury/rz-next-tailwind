@@ -5,9 +5,9 @@ import SideBar from './sidebar/sidebar';
 
 const sidebar = false;
 
-export default function Layout(props: RazorWindProps.Layout) {
+export default function Layout(props: RZNTProps.Layout) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const navbarLinks: RazorWindProps.Navigation.Link[] = [
+  const navbarLinks: RZNTProps.Navigation.Link[] = [
     {
       label: 'Home',
       href: '/'

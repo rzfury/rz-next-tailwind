@@ -8,6 +8,10 @@ import { withTL } from '../components/hoc/with-tl';
 class Index extends React.Component<any, any> {
   examples: any = [
     {
+      link: 'aos',
+      label: 'Animate on Scroll'
+    },
+    {
       link: 'button',
       label: 'Button'
     },

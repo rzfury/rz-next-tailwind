@@ -4,7 +4,7 @@ import NavBrand from './nav-brand';
 import NavLink from './nav-link';
 import conclass from '../../utility/conclass';
 
-function Nav(props: RazorWindProps.Navigation.Nav) {
+function Nav(props: RZNTProps.Navigation.Nav) {
   const [collapsed, setCollapsed] = useState(false);
 
   return (

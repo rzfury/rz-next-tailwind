@@ -1,11 +1,11 @@
 /**
- * RazorWind UI
+ * RZNT UI
  * 
  * RZFury's Tailwind UI Components
  * 
  */
 
-declare namespace RazorWindProps {
+declare namespace RZNTProps {
 
   interface Layout extends React.HTMLAttributes<HTMLElement> {
     sidebar?: boolean;
@@ -193,11 +193,11 @@ declare namespace RazorWindProps {
 
 }
 
-declare namespace RazorWindStates {
+declare namespace RZNTStates {
   namespace Form {
     interface AutoComplete {
       highlightIndex: number;
-      matches: (RazorWindProps.Form.AutoCompleteOption | string)[];
+      matches: (RZNTProps.Form.AutoCompleteOption | string)[];
       showDropdown: boolean;
     }
   }

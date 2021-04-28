@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import conclass from '../../utility/conclass';
 
-export default function NavLink(props: RazorWindProps.Navigation.Link) {
+export default function NavLink(props: RZNTProps.Navigation.Link) {
   const router = useRouter();
 
   const NavItem = function ({ children }) {
@@ -45,8 +45,8 @@ export default function NavLink(props: RazorWindProps.Navigation.Link) {
     };
 
     const dropdownItems = props.dropdown.map(
-      item => (
-        <div className={conclass(props.mobile ? 'text-white' : 'whitespace-no-wrap text-gray-700 hover:bg-gray-200', router.pathname === `${!item.noParent ? props.href : ''}${item.href}` ? (props.mobile && 'bg-blue-300') : (props.mobile && 'bg-blue-400'))}>
+      (item, i) => (
+        <div key={i} className={conclass(props.mobile ? 'text-white' : 'whitespace-no-wrap text-gray-700 hover:bg-gray-200', router.pathname === `${!item.noParent ? props.href : ''}${item.href}` ? (props.mobile && 'bg-blue-300') : (props.mobile && 'bg-blue-400'))}>
           <Link href={`${!item.noParent ? props.href : ''}${item.href}`} passHref>
             <a className={props.mobile ? 'px-8 py-3 block' : 'px-4 py-2 block'}>{item.label}</a>
           </Link>

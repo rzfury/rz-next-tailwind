@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Form(props: RazorWindProps.Form.Form) {
+export default function Form(props: RZNTProps.Form.Form) {
   return (
     <form
       {...props}

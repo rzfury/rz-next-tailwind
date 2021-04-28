@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Select(props: RazorWindProps.Form.Select) {
+export default function Select(props: RZNTProps.Form.Select) {
   return (
     <div className="block">
       <label className="text-gray-600">{props.label}</label>

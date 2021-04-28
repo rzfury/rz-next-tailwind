@@ -1,78 +1,62 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Layout from '../../layout/layout';
 import Button from '../../components/common/button';
+import { Checkbox, Radio } from '../../components/common/form';
 
-export default function ExampleButton() {
-  return (
-    <Layout>
-      <div className="p-5">
-        <span className="text-gray-700 text-2xl">TailwindCSS - Buttons</span>
-        <hr className="my-5" />
-        <div className="flex flex-wrap gap-x-2 gap-y-3 mb-6">
-          <Button role="primary">Primary</Button>
-          <Button role="default">Default</Button>
-          <Button role="danger">Danger</Button>
-          <Button disabled role="primary">Primary</Button>
-          <Button disabled role="default">Default</Button>
-          <Button disabled role="danger">Danger</Button>
+export default class ExampleButton extends Component<{}, any> {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      block: false,
+      rounded: false,
+      outline: false,
+      disabled: false,
+      variant: 'default'
+    };
+  }
+
+  onVariant = (variant: string) => {
+    return () => this.setState({ variant });
+  }
+
+  onChanged = (state: string) => {
+    return ({ target }) => this.setState({ [state]: target.checked });
+  }
+
+  render() {
+    const { block, rounded, outline, disabled, variant } = this.state;
+
+    return (
+      <Layout>
+        <div className="p-5">
+          <span className="text-gray-700 text-2xl">TailwindCSS - Button</span>
+          <hr className="my-5" />
+
+          <div className="flex flex-col gap-y-2 mb-5">
+            <div>Variants: </div>
+            <div className="flex gap-x-4">
+              <Radio label="Default" name="variant" onChange={this.onVariant('default')} checked={variant === 'default'}/>
+              <Radio label="Primary" name="variant" onChange={this.onVariant('primary')} checked={variant === 'primary'}/>
+              <Radio label="Danger" name="variant" onChange={this.onVariant('danger')} checked={variant === 'danger'}/>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-y-2 mb-5">
+            <div>Configs: </div>
+            <div className="flex gap-x-4">
+              <Checkbox label="Block" onChange={this.onChanged('block')} />
+              <Checkbox label="Rounded" onChange={this.onChanged('rounded')} />
+              <Checkbox label="Outline" onChange={this.onChanged('outline')} />
+              <Checkbox label="Disabled" onChange={this.onChanged('disabled')} />
+            </div>
+          </div>
+
+          <div className="block">
+            <Button block={block} rounded={rounded} outline={outline} disabled={disabled} role={variant}>Default</Button>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-x-2 gap-y-3 mb-6">
-          <Button outline role="primary">Primary</Button>
-          <Button outline role="default">Default</Button>
-          <Button outline role="danger">Danger</Button>
-          <Button disabled outline role="primary">Primary</Button>
-          <Button disabled outline role="default">Default</Button>
-          <Button disabled outline role="danger">Danger</Button>
-        </div>
-        <div className="flex flex-wrap gap-x-2 gap-y-3 mb-6">
-          <Button rounded role="primary">Primary</Button>
-          <Button rounded role="default">Default</Button>
-          <Button rounded role="danger">Danger</Button>
-          <Button disabled rounded role="primary">Primary</Button>
-          <Button disabled rounded role="default">Default</Button>
-          <Button disabled rounded role="danger">Danger</Button>
-        </div>
-        <div className="flex flex-wrap gap-x-2 gap-y-3 mb-6">
-          <Button rounded outline role="primary">Primary</Button>
-          <Button rounded outline role="default">Default</Button>
-          <Button rounded outline role="danger">Danger</Button>
-          <Button disabled rounded outline role="primary">Primary</Button>
-          <Button disabled rounded outline role="default">Default</Button>
-          <Button disabled rounded outline role="danger">Danger</Button>
-        </div>
-        <div className="gap-y-2 mb-6">
-          <Button block role="primary" className="mb-4">Primary</Button>
-          <Button block role="default" className="mb-4">Default</Button>
-          <Button block role="danger" className="mb-4">Danger</Button>
-          <Button disabled block role="primary" className="mb-4">Primary</Button>
-          <Button disabled block role="default" className="mb-4">Default</Button>
-          <Button disabled block role="danger" className="mb-4">Danger</Button>
-        </div>
-        <div className="gap-y-2">
-          <Button block outline role="primary" className="mb-4">Primary</Button>
-          <Button block outline role="default" className="mb-4">Default</Button>
-          <Button block outline role="danger" className="mb-4">Danger</Button>
-          <Button disabled block outline role="primary" className="mb-4">Primary</Button>
-          <Button disabled block outline role="default" className="mb-4">Default</Button>
-          <Button disabled block outline role="danger" className="mb-4">Danger</Button>
-        </div>
-        <div className="gap-y-2 mb-6">
-          <Button rounded block role="primary" className="mb-4">Primary</Button>
-          <Button rounded block role="default" className="mb-4">Default</Button>
-          <Button rounded block role="danger" className="mb-4">Danger</Button>
-          <Button disabled rounded block role="primary" className="mb-4">Primary</Button>
-          <Button disabled rounded block role="default" className="mb-4">Default</Button>
-          <Button disabled rounded block role="danger" className="mb-4">Danger</Button>
-        </div>
-        <div className="gap-y-2">
-          <Button rounded block outline role="primary" className="mb-4">Primary</Button>
-          <Button rounded block outline role="default" className="mb-4">Default</Button>
-          <Button rounded block outline role="danger" className="mb-4">Danger</Button>
-          <Button disabled rounded block outline role="primary" className="mb-4">Primary</Button>
-          <Button disabled rounded block outline role="default" className="mb-4">Default</Button>
-          <Button disabled rounded block outline role="danger" className="mb-4">Danger</Button>
-        </div>
-      </div>
-    </Layout>
-  );
+      </Layout>
+    );
+  }
 }

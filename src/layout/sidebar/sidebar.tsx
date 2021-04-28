@@ -2,8 +2,8 @@ import React from 'react';
 import conclass from '../../utility/conclass';
 import NavBrand from '../navbar/nav-brand';
 
-class SideBar extends React.Component<RazorWindProps.Sidebar, any> {
-  renderNavDropdown = (link: RazorWindProps.Navigation.Link) => {
+class SideBar extends React.Component<RZNTProps.Sidebar, any> {
+  renderNavDropdown = (link: RZNTProps.Navigation.Link) => {
     const dropdown = React.createRef<HTMLDivElement>();
     const toggleHandler = () => {
       const classList = dropdown.current.classList;

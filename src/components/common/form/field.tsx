@@ -1,7 +1,7 @@
 import React from 'react';
 import conclass from '../../../utility/conclass';
 
-export default function Field(props: RazorWindProps.Form.Field) {
+export default function Field(props: RZNTProps.Form.Field) {
   const [hasValue, setHasValue] = React.useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
